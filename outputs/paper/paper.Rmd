@@ -2,8 +2,9 @@
 title: "My title"
 subtitle: "My subtitle if needed"
 author: 
-  - First author
-  - Another author
+  - Lantao Cui
+  - Huakun Shen
+  - Sijian Wu
 thanks: "Code and data are available at: LINK."
 date: "`r format(Sys.time(), '%d %B %Y')`"
 abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
@@ -13,11 +14,34 @@ toc: FALSE
 bibliography: references.bib
 ---
 
+
+## Table of Contents
+### 1  Introduction\
+------------------------------------------------------------------------------------------------2
+
+### 2  Data
+##### 2.1 Data Source\
+------------------------------------------------------------------------------------------------3
+
+##### 2.2 Methodology and Data Collection\
+------------------------------------------------------------------------------------------------3
+
+##### 2.3 Data Characteristics\
+------------------------------------------------------------------------------------------------5
+
+### 3 Limitations and Conclusion\
+------------------------------------------------------------------------------------------------9
+
+### 4 Reference\
+------------------------------------------------------------------------------------------------10
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
-library(palmerpenguins)
+library(dplyr)
+library(ggplot2)
+library(here)
+
 ```
 
 # Introduction
@@ -27,50 +51,57 @@ You can and should cross-reference sections and sub-sections. For instance, Sect
 
 
 # Data
+We started our analysis by using R [@citeR], dplyr[@dplyr], tidyverse[@tidyverse], here[@here]. Graphs are generated using and ggplot2[@ggplot2].
 
-Our data is of penguins (Figure \@ref(fig:bills)).
+## Date Source
 
-```{r bills, fig.cap="Bills of penguins", echo = FALSE}
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = FALSE) +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
+## Methodology and Data Collection
+
+```{r, include=FALSE, warning=FALSE}
+gss_data <-
+  read_csv(here::here("inputs/data/Discrimination.csv"))
+glimpse(gss_data)
 ```
 
-Talk more about it.
+```{r, include=FALSE}
+#Renaming the variables according to the code book by using the function "rename". 
+#Select needed variables for analysis from the aspect of discrimination by using the function"select"
+gss_data_renamed <- gss_data %>%
+  rename(Sex = dis_10, Ethnicity_or_Culture = dis_15, Race_or_Skin_Colour = dis_20, Physical_Appearance = dis_25, Religion = dis_30, Sexual_Orientation = dis_35, Age = dis_40, Physical_or_Mental_Disability = dis_45, Language = dis_50, Other_Discrimination = dis_55, Victim_of_Discrimination_5_years = discrim, Bank_Store_Restaurant = dts_20, Work_Environment = dts_25, Police = dts_30, Courts = dts_35, Canadian_Border = dts_60, Other_Experience = dts_65) %>%
+  select (Sex, Ethnicity_or_Culture, Race_or_Skin_Colour, Physical_Appearance, Religion, Sexual_Orientation, Age, Physical_or_Mental_Disability, Language, Other_Discrimination, Victim_of_Discrimination_5_years, Bank_Store_Restaurant, Work_Environment, Police, Courts, Canadian_Border, Other_Experience)
 
-Also bills and their average (Figure \@ref(fig:billssssss)). (Notice how you can change the height and width so they don't take the whole page?)
-
-```{r billssssss, fig.cap="More bills of penguins", echo = FALSE, fig.width=8, fig.height=4}
-
-# This needs to be about the random data tha tI sasmpled?
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = FALSE) +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
+colnames(gss_data_renamed)
+class(gss_data_renamed$Ethnicity_or_Culture)
+```
+```{r, include=FALSE}
+  data_cleaned <-  gss_data_renamed %>%
+  mutate( Discrimination_Reason =
+           case_when(Sex == 1 ~ "Sex",
+                     Ethnicity_or_Culture == 1 ~ "Ethnicity or Culture",
+                     Race_or_Skin_Colour == 1 ~ "Race or Skin Colour",
+                     Physical_Appearance == 1 ~ "Physical Appearanc",
+                     Religion == 1 ~ "Religion",
+                     Sexual_Orientation == 1 ~ "Sexual Orientation",
+                     Age == 1 ~ "Age",
+                     Physical_or_Mental_Disability == 1 ~ "Physical or Mental Disability",
+                     Language == 1 ~ "Language",
+                     Other_Discrimination == 1 ~ "Other Discrimination Reason"
+                     )) %>%
+  mutate (Discrimination_Experience = 
+            case_when(Bank_Store_Restaurant == 1 ~ "Bank or Store or Restaurant",
+                      Work_Environment == 1 ~ "Work Environment",
+                      Police == 1 ~ "Police",
+                      Courts == 1 ~ "Courts",
+                      Canadian_Border == 1 ~ "Cannadian Border",
+                      Other_Experience == 1 ~ "Other Experience"
+              
+            ))
 ```
 
-Talk way more about it. 
 
 
 
-# Model
 
-\begin{equation}
-Pr(\theta | y) = \frac{Pr(y | \theta) Pr(\theta)}{Pr(y)}  (\#eq:bayes)
-\end{equation}
-
-Equation \@ref(eq:bayes) seems useful, eh?
-
-Here's a dumb example of how to use some references: In paper we run our analysis in `R` [@citeR]. We also use the `tidyverse` which was written by @thereferencecanbewhatever If we were interested in baseball data then @citeLahman could be useful. 
-
-We can use maths by including latex between dollar signs, for instance $\theta$.
 
 
 # Results
@@ -79,7 +110,7 @@ We can use maths by including latex between dollar signs, for instance $\theta$.
 
 ## First discussion point
 
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+
 
 ## Second discussion point
 
@@ -87,7 +118,7 @@ If my paper were 10 pages, then should be be at least 2.5 pages. The discussion 
 
 ## Weaknesses and next steps
 
-Weaknesses and next steps should also be included.
+
 
 \newpage
 
