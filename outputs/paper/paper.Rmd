@@ -40,6 +40,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(dplyr)
 library(ggplot2)
+library(kableExtra)
 library(here)
 
 ```
@@ -51,7 +52,7 @@ You can and should cross-reference sections and sub-sections. For instance, Sect
 
 
 # Data
-We started our analysis by using R [@citeR], dplyr[@dplyr], tidyverse[@tidyverse], here[@here]. Graphs are generated using and ggplot2[@ggplot2].
+We started our analysis by using R [@citeR], dplyr[@dplyr], tidyverse[@tidyverse], here[@here]. Graphs are generated using and ggplot2[@ggplot2] and kableExtra[@kableExtra].
 
 ## Date Source
 
@@ -73,19 +74,20 @@ gss_data_renamed <- gss_data %>%
 colnames(gss_data_renamed)
 class(gss_data_renamed$Ethnicity_or_Culture)
 ```
+
 ```{r, include=FALSE}
   data_cleaned <-  gss_data_renamed %>%
   mutate( Discrimination_Reason =
            case_when(Sex == 1 ~ "Sex",
-                     Ethnicity_or_Culture == 1 ~ "Ethnicity or Culture",
-                     Race_or_Skin_Colour == 1 ~ "Race or Skin Colour",
-                     Physical_Appearance == 1 ~ "Physical Appearanc",
+                     Ethnicity_or_Culture == 1 ~ "Ethnicity",
+                     Race_or_Skin_Colour == 1 ~ "Race",
+                     Physical_Appearance == 1 ~ "Physical Appearance",
                      Religion == 1 ~ "Religion",
                      Sexual_Orientation == 1 ~ "Sexual Orientation",
                      Age == 1 ~ "Age",
-                     Physical_or_Mental_Disability == 1 ~ "Physical or Mental Disability",
+                     Physical_or_Mental_Disability == 1 ~ "Disability",
                      Language == 1 ~ "Language",
-                     Other_Discrimination == 1 ~ "Other Discrimination Reason"
+                     Other_Discrimination == 1 ~ "Other"
                      )) %>%
   mutate (Discrimination_Experience = 
             case_when(Bank_Store_Restaurant == 1 ~ "Bank or Store or Restaurant",
@@ -95,13 +97,33 @@ class(gss_data_renamed$Ethnicity_or_Culture)
                       Canadian_Border == 1 ~ "Cannadian Border",
                       Other_Experience == 1 ~ "Other Experience"
               
-            ))
+            ))%>%
+  mutate(Have_Discrimination_Experience_in_5_years = Victim_of_Discrimination_5_years == 1)
+
+
 ```
 
 
 
 
 
+```{r, echo=FALSE, warning=FALSE}
+ggplot(data = data_cleaned) + 
+  geom_histogram(aes(x = Have_Discrimination_Experience_in_5_years, fill = Discrimination_Reason), 
+                 position = 'dodge', 
+                 bins = 10) + 
+  theme(axis.text.x=element_blank()) +
+  scale_x_log10()
+```
+
+```{r, echo=FALSE, warning=FALSE}
+ggplot(data = data_cleaned) + 
+  geom_histogram(aes(x = Have_Discrimination_Experience_in_5_years, fill = Discrimination_Experience), 
+                 position = 'dodge', 
+                 bins = 10) +
+  theme(axis.text.x=element_blank()) +
+  scale_x_log10()
+```
 
 
 # Results
@@ -120,14 +142,7 @@ class(gss_data_renamed$Ethnicity_or_Culture)
 
 
 
-\newpage
 
-\appendix
-
-# Appendix {-}
-
-
-# Additional details
 
 
 \newpage
