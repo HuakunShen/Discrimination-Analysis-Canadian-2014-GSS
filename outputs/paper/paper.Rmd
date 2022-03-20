@@ -54,7 +54,17 @@ You can and should cross-reference sections and sub-sections. For instance, Sect
 # Data
 We started our analysis by using R [@citeR], dplyr[@dplyr], tidyverse[@tidyverse], here[@here]. Graphs are generated using and ggplot2[@ggplot2] and kableExtra[@kableExtra].
 
-## Date Source
+## Data Source
+We retrieved our data from CHASS [@chass]. The GSS program, established in 1985, conducts surveys annually across the 10 provinces. The GSS is recognized for its regular collection of cross-sectional data that allows for trend analysis, and its capacity to test and develop new concepts that address current and emerging issues. The two primary objectives of the General Social Survey are: 
+a)  to gather data on social trends in order to monitor changes in the living conditions and well-being 
+of Canadians over time; and 
+b)  to provide immediate information on specific social policy issues of current or emerging interest. 
+To meet these objectives, the data collected by the GSS are made up of two components: classification and core content. Classification content (such as age, sex, education, income) helps to delineate population groups for use in the analysis of core data. Core content is designed to measure changes in society related to living conditions and well-being and to supply data to inform specific policy issues. 
+
+Data for 2014 General Social Survey (GSS) on Canadians’ Safety and Security (Victimization) was collected from January to December, 2014. The target population for the Cycle 28 GSS included all persons 15 years of age and older in Canada, excluding: 
+1. Residents of the Yukon, Northwest Territories, and Nunavut; 
+2. Full-time residents of institutions. 
+
 
 ## Methodology and Data Collection
 
@@ -103,6 +113,18 @@ class(gss_data_renamed$Ethnicity_or_Culture)
 
 ```
 
+The survey frame was created using two different components: 
+•  Lists of telephone numbers in use (both land line and cellular) available to Statistics Canada from various sources (Telephone companies, Census of population, etc.); 
+•  The Address Register (AR): List of all dwellings within the ten provinces. 
+In each frame, each record was assigned to a stratum within its province. A simple random sample without replacement of records was next selected in each stratum. Only specific geographies were targeted for the over sample of immigrants and youth. Coverage of the 2014 GSS on Canadians’ Safety and Security (Victimization) targeted population by the survey frame is estimated to be more than 86% complete. All respondents in the ten provinces were interviewed by telephone. Households without telephones were therefore excluded. During collection, for the households not meeting the eligibility criteria, the interviews were terminated after an initial set of questions that established whether or not they met the criteria. For the over sample cases, an extra question was asked to determine if each person in the household was born in Canada or not. 
+The target sample size (i.e. the number of respondents) for Cycle 28 on Canadians’ Safety and Security (Victimization) was 39,674, while the actual number of respondents was 33,127. Some GSS respondents were removed from the PUMF for confidentiality reasons. GSS Cycle 28 PUMF contains questionnaire responses and associated information from 33,089 respondents. For each province, minimum sample sizes were determined that would ensure certain estimates would have acceptable sampling variability at the stratum level. Once these stratum sample size targets had been met, the remaining sample was allocated to the strata in a way that balanced the need for precision of both national-level and stratum-level estimates. 
+
+## Data Overview
+Among all the available data in the Canadian General Social Survey(Victimization), we decide to choose the following subset: *CIP: Confidence In Police*, *DEM: Demographic Derived Variables*, *PCC: Perceptions: Criminal Courts*, *PLP: Perceptions: Local Police*, *TIP: Trust In People*. We will first find the number of each gender in the survey, if the number of respondents from each gender groups are uneven, then the result might be biased toward a gender group. After analyzing the survey data set, the following gender distribution is found, as shown in Figure \@ref(fig:gender-distribution). From the figure, we can see that the gender distribution are about the same, so we can proceed to further investigation.
+
+\newpage
+#Results
+## Classification of Discrimination
 
 ```{r, echo=FALSE, warning=FALSE}
 ggplot(data = data_cleaned) + 
@@ -122,11 +144,10 @@ ggplot(data = data_cleaned) +
   scale_x_log10()
 ```
 
-# Impact of Gender on People's Confidence in Law Enforcement 
+## Impact of Gender on People's Confidence in Law Enforcement 
 After noting that the majority of discriminating cases are gender discrimination. We are wondering if this will also be reflected in people's confidence in Law Enforcement. To be a specific, if a certain gender group are more vulnerable to discrimination, will that group also be treated unfairly during law enforcement? To investigate this, we extracted some other survey results from Canadian General Social Survey.
 
-## Data Overview
-Among all the available data in the Canadian General Social Survey(Victimization), we decide to choose the following subset: *CIP: Confidence In Police*, *DEM: Demographic Derived Variables*, *PCC: Perceptions: Criminal Courts*, *PLP: Perceptions: Local Police*, *TIP: Trust In People*. We will first find the number of each gender in the survey, if the number of respondents from each gender groups are uneven, then the result might be biased toward a gender group. After analyzing the survey data set, the following gender distribution is found, as shown in Figure \@ref(fig:gender-distribution). From the figure, we can see that the gender distribution are about the same, so we can proceed to further investigation.
+
 
 ```{r, include=FALSE}
 input_csv <- read_csv(here::here(
