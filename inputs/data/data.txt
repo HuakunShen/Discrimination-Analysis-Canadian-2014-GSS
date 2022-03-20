@@ -1,0 +1,1478 @@
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      CODEBOOK
+
+
+                              GSS Cycle 28, 2014 Main
+                                          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      GSS Cycle 28, 2014 Main                                           Page i
+
+
+                                      CONTENTS
+
+
+      item                                                                page
+
+      CASEID                                                                 1
+      adp_010            Dating - Limit contact/called names/ threatened     1
+      cip_10             Confidence in the police                            1
+      mshsd              Most serious household victimization                2
+      msper              Most serious personal incident - Excludes (ex-)s    3
+      msvic              Most serious incident - Excludes (ex-)spousal/(e    4
+      agegr10            Age group of respondent (groups of 10)              4
+      luc_rst            Population centres indicator                        5
+      prv                Province of residence                               5
+      region             Region of residence of the respondent               6
+      sex                Sex of respondent                                   6
+      discrim            Victim of discrimination - 5 years                  6
+      dis_10             Discrimination - Sex                                7
+      dis_15             Discrimination - Ethnicity or culture               7
+      dis_20             Discrimination - Race or skin colour                7
+      dis_25             Discrimination - Physical appearance                8
+      dis_30             Discrimination - Religion                           8
+      dis_35             Discrimination - Sexual orientation                 8
+      dis_40             Discrimination - Age                                9
+      dis_45             Discrimination - Physical or mental disability      9
+      dis_50             Discrimination - Language                           9
+      dis_55             Discrimination - Other                             10
+      dis_rind           Discrimination/unfair treatment - Reasons - Sing   10
+      dis_pl             Discrimination or unfair treatment - Places or s   10
+      dts_20             Experienced discrimination - Bank, store, restau   11
+      dts_25             Experienced discrimination - Work environment      11
+      dts_30             Experienced discrimination - Police                11
+      dts_35             Experienced discrimination - Courts                12
+      dts_60             Experienced discrimination - Canadian border       12
+      dts_65             Experienced discrimination - Other                 12
+      eduf10             Highest level of education - Father - 10 groups    13
+      eduf5              Highest level of education - Father - 5 groups     13
+      edum10             Highest level of education - Mother - 10 groups    14
+      edum5              Highest level of education - Mother - 5 groups     14
+      edupr10            Highest level of education - Spouse/partner - 10   15
+      edupr5             Highest level of education - spouse/partner - 5    15
+      eor_01a            Education - Type of institution - Elementary/jun   16
+      eor_01b            Education - Type of institution - Trade school,    16
+      eor_01c            Education - Type of institution - University       16
+      eor_02             Education - Enrollment status                      17
+      pcc_145            Criminal courts - Confidence                       17
+      pcc_160            Criminal courts - Contact                          17
+      plp_110            Perception (local police) - Enforcing the laws     18
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                          Page ii
+
+
+      item                                                                page
+
+      plp_120            Perception (local police) - Promptly responding    18
+      plp_130            Perception (local police) - Being approachable a   18
+      plp_140            Perception (local police) - Information on ways    19
+      plp_150            Perception (local police) - Ensuring safety of c   19
+      plp_160            Perception (local police) - Treating people fair   19
+      tip_10             Trust - Members of family                          20
+      tip_15             Trust - People in neighbourhood                    20
+      tip_20             Trust - People from work or school                 21
+      tip_25             Trust - Strangers                                  21
+      totvic             Number of victimizations - Excludes (ex-)spousal   22
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                           Page 1
+
+
+      CASEID
+
+           Data type: numeric
+           Record/columns: 1/1-5
+
+      ________________________________________________________________________
+
+      adp_010            Dating - Limit contact/called names/ threatened to harm
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               3  Did not date in the past 5 years
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/7
+
+      ________________________________________________________________________
+
+      cip_10             Confidence in the police
+
+           VALUE  LABEL
+               1  A great deal of confidence
+               2  Some confidence
+               3  Not very much confidence
+               4  No confidence at all
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                           Page 2
+
+
+      mshsd              Most serious household victimization
+
+           VALUE  LABEL
+             405  Break and enter
+             406  Attempted break and enter
+             507  Motor vehicle theft
+             508  Part of a motor vehicle theft
+             509  Attempted motor vehicle (parts) theft
+             711  Theft of household property
+             712  Attempted theft of household property
+             813  Vandalism
+             994  Not asked - no crime reported
+             995  Unclassifiable
+             996  Valid skip
+             997  Don't know
+             998  Refusal
+             999  Not stated
+
+           Data type: numeric
+           Missing-data codes: 996-999
+           Record/columns: 1/11-13
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                           Page 3
+
+
+      msper              Most serious personal incident - Excludes (ex-)spousal/partner
+
+           VALUE  LABEL
+             101  Sexual assault
+             202  Robbery
+             203  Attempted robbery
+             304  Assault
+             405  Break and enter
+             406  Attempted break and enter
+             507  Motor vehicle theft
+             508  Part of a motor vehicle theft
+             509  Attempted motor vehicle (parts) theft
+             609  Theft of personal property
+             610  Attempted theft of personal property
+             711  Theft of household property
+             712  Attempted theft of household property
+             813  Vandalism
+             994  Not asked - no crime reported
+             995  Unclassifiable
+             996  Valid skip
+             997  Don't know
+             998  Refusal
+             999  Not stated
+
+           Data type: numeric
+           Missing-data codes: 996-999
+           Record/columns: 1/15-17
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                           Page 4
+
+
+      msvic              Most serious incident - Excludes (ex-)spousal/(ex-)partner
+
+           VALUE  LABEL
+             101  Sexual assault
+             202  Robbery
+             203  Attempted robbery
+             304  Assault
+             405  Break and enter
+             406  Attempted break and enter
+             507  Motor vehicle theft
+             508  Part of a motor vehicle theft
+             509  Attempted motor vehicle (parts) theft
+             609  Theft of personal property
+             610  Attempted theft of personal property
+             711  Theft of household property
+             712  Attempted theft of household property
+             813  Vandalism
+             994  Not asked - no crime reported
+             995  Unclassifiable
+             996  Valid skip
+             997  Don't know
+             998  Refusal
+             999  Not stated
+
+           Data type: numeric
+           Missing-data codes: 996-999
+           Record/columns: 1/19-21
+
+      ________________________________________________________________________
+
+      agegr10            Age group of respondent (groups of 10)
+
+           VALUE  LABEL
+               1  15 to 24
+               2  25 to 34
+               3  35 to 44
+               4  45 to 54
+               5  55 to 64
+               6  65 to 74
+               7  75 years and older
+              96  Valid skip
+              97  Don't know
+              98  Refusal
+              99  Not stated
+
+           Data type: numeric
+           Missing-data codes: 96-99
+           Record/column: 1/23
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                           Page 5
+
+
+      luc_rst            Population centres indicator
+
+           VALUE  LABEL
+               1  Larger urban population centres (CMA/CA)
+               2  Rural areas/small population centres (non-CMA/CA)
+               3  Prince Edward Island
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/25
+
+      ________________________________________________________________________
+
+      prv                Province of residence
+
+           VALUE  LABEL
+              10  Newfoundland and Labrador
+              11  Prince Edward Island
+              12  Nova Scotia
+              13  New Brunswick
+              24  Quebec
+              35  Ontario
+              46  Manitoba
+              47  Saskatchewan
+              48  Alberta
+              59  British Columbia
+              60  Yukon
+              61  Northwest Territories
+              62  Nunavut
+              96  Valid skip
+              97  Don't know
+              98  Refusal
+              99  Not stated
+
+           Data type: character
+           Record/columns: 1/28-29
+
+
+
+
+
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                           Page 6
+
+
+      region             Region of residence of the respondent
+
+           VALUE  LABEL
+               1  Atlantic region
+               2  Quebec
+               3  Ontario
+               4  Prairie region
+               5  British Columbia
+               6  Territories
+              96  Valid skip
+              97  Don't know
+              98  Refusal
+              99  Not stated
+
+           Data type: numeric
+           Missing-data codes: 96-99
+           Record/column: 1/32
+
+      ________________________________________________________________________
+
+      sex                Sex of respondent
+
+           VALUE  LABEL
+               1  Male
+               2  Female
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/34
+
+      ________________________________________________________________________
+
+      discrim            Victim of discrimination - 5 years
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/36
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                           Page 7
+
+
+      dis_10             Discrimination - Sex
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/38
+
+      ________________________________________________________________________
+
+      dis_15             Discrimination - Ethnicity or culture
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/40
+
+      ________________________________________________________________________
+
+      dis_20             Discrimination - Race or skin colour
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/42
+
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                           Page 8
+
+
+      dis_25             Discrimination - Physical appearance
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/44
+
+      ________________________________________________________________________
+
+      dis_30             Discrimination - Religion
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/46
+
+      ________________________________________________________________________
+
+      dis_35             Discrimination - Sexual orientation
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/48
+
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                           Page 9
+
+
+      dis_40             Discrimination - Age
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/50
+
+      ________________________________________________________________________
+
+      dis_45             Discrimination - Physical or mental disability
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/52
+
+      ________________________________________________________________________
+
+      dis_50             Discrimination - Language
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/54
+
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                          Page 10
+
+
+      dis_55             Discrimination - Other
+
+           VALUE  LABEL
+               1  Yes - Specify
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/56
+
+      ________________________________________________________________________
+
+      dis_rind           Discrimination/unfair treatment - Reasons - Single/mutiple indicator
+
+           VALUE  LABEL
+               0  No discrimination experienced
+               1  Single response
+               2  Multiple responses
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/58
+
+      ________________________________________________________________________
+
+      dis_pl             Discrimination or unfair treatment - Places or situations - Number
+
+           VALUE  LABEL
+               1  Single place or situation
+               2  Multiple places or situations
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/60
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                          Page 11
+
+
+      dts_20             Experienced discrimination - Bank, store, restaurant
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/62
+
+      ________________________________________________________________________
+
+      dts_25             Experienced discrimination - Work environment
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/64
+
+      ________________________________________________________________________
+
+      dts_30             Experienced discrimination - Police
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/66
+
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                          Page 12
+
+
+      dts_35             Experienced discrimination - Courts
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/68
+
+      ________________________________________________________________________
+
+      dts_60             Experienced discrimination - Canadian border
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               3  Have not crossed the border into Canada in past 5 years
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/70
+
+      ________________________________________________________________________
+
+      dts_65             Experienced discrimination - Other
+
+           VALUE  LABEL
+               1  Yes - Specify
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/72
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                          Page 13
+
+
+      eduf10             Highest level of education - Father - 10 groups
+
+           VALUE  LABEL
+               1  Doctorate/masters/some graduate
+               2  Bachelor's degree
+               3  Diploma/certificate from community college
+               4  Diploma/certificate from trade/technical
+               5  Some university
+               6  Some community college/CEGEP/nursing
+               7  Some trade/technical
+               8  High school diploma
+               9  Some secondary/high school
+              10  Elementary school/no school
+              96  Valid skip
+              97  Don't know
+              98  Refusal
+              99  Not stated
+
+           Data type: numeric
+           Missing-data codes: 96-99
+           Record/columns: 1/74-75
+
+      ________________________________________________________________________
+
+      eduf5              Highest level of education - Father - 5 groups
+
+           VALUE  LABEL
+               1  Doctorate/masters/bachelor's degree
+               2  Diploma/cert. from community college or trade/technical
+               3  Some university/community college
+               4  High school diploma
+               5  Some secondary/elementary/no schooling
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/77
+
+
+
+
+
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                          Page 14
+
+
+      edum10             Highest level of education - Mother - 10 groups
+
+           VALUE  LABEL
+               1  Doctorate/masters/some graduate
+               2  Bachelor's degree
+               3  Diploma/certificate from community college
+               4  Diploma/certificate from trade/technical
+               5  Some university
+               6  Some community college/CEGEP/nursing
+               7  Some trade/technical
+               8  High school diploma
+               9  Some secondary/high school
+              10  Elementary school/no school
+              96  Valid skip
+              97  Don't know
+              98  Refusal
+              99  Not stated
+
+           Data type: numeric
+           Missing-data codes: 96-99
+           Record/columns: 1/79-80
+
+      ________________________________________________________________________
+
+      edum5              Highest level of education - Mother - 5 groups
+
+           VALUE  LABEL
+               1  Doctorate/masters/bachelor's degree
+               2  Diploma/cert. from community college or trade/technical
+               3  Some university/community college
+               4  High school diploma
+               5  Some secondary/elementary/no schooling
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/82
+
+
+
+
+
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                          Page 15
+
+
+      edupr10            Highest level of education - Spouse/partner - 10 groups
+
+           VALUE  LABEL
+               1  Doctorate/masters/some graduate
+               2  Bachelor's degree
+               3  Diploma/certificate from community college
+               4  Diploma/certificate from trade/technical
+               5  Some university
+               6  Some community college/CEGEP/nursing
+               7  Some trade/technical
+               8  High school diploma
+               9  Some secondary/high school
+              10  Elementary school/no school
+              96  Valid skip
+              97  Don't know
+              98  Refusal
+              99  Not stated
+
+           Data type: numeric
+           Missing-data codes: 96-99
+           Record/columns: 1/84-85
+
+      ________________________________________________________________________
+
+      edupr5             Highest level of education - spouse/partner - 5 groups
+
+           VALUE  LABEL
+               1  Doctorate/masters/bachelor's degree
+               2  Diploma/cert. from community college or trade/technical
+               3  Some university/community college
+               4  High school diploma
+               5  Some secondary/elementary/no schooling
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/87
+
+
+
+
+
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                          Page 16
+
+
+      eor_01a            Education - Type of institution - Elementary/junior/high school
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/89
+
+      ________________________________________________________________________
+
+      eor_01b            Education - Type of institution - Trade school, college
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/91
+
+      ________________________________________________________________________
+
+      eor_01c            Education - Type of institution - University
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/93
+
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                          Page 17
+
+
+      eor_02             Education - Enrollment status
+
+           VALUE  LABEL
+               1  A full-time student
+               2  A part-time student
+               3  Both full-time and part-time student
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/95
+
+      ________________________________________________________________________
+
+      pcc_145            Criminal courts - Confidence
+
+           VALUE  LABEL
+               1  A great deal of confidence
+               2  Some confidence
+               3  Not very much confidence
+               4  No confidence at all
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/97
+
+      ________________________________________________________________________
+
+      pcc_160            Criminal courts - Contact
+
+           VALUE  LABEL
+               1  Yes
+               2  No
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/99
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                          Page 18
+
+
+      plp_110            Perception (local police) - Enforcing the laws
+
+           VALUE  LABEL
+               1  Good job
+               2  Average job
+               3  Poor job
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/101
+
+      ________________________________________________________________________
+
+      plp_120            Perception (local police) - Promptly responding to calls
+
+           VALUE  LABEL
+               1  Good job
+               2  Average job
+               3  Poor job
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/103
+
+      ________________________________________________________________________
+
+      plp_130            Perception (local police) - Being approachable and easy to talk to
+
+           VALUE  LABEL
+               1  Good job
+               2  Average job
+               3  Poor job
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/105
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                          Page 19
+
+
+      plp_140            Perception (local police) - Information on ways to prevent crime
+
+           VALUE  LABEL
+               1  Good job
+               2  Average job
+               3  Poor job
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/107
+
+      ________________________________________________________________________
+
+      plp_150            Perception (local police) - Ensuring safety of citizens in area
+
+           VALUE  LABEL
+               1  Good job
+               2  Average job
+               3  Poor job
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/109
+
+      ________________________________________________________________________
+
+      plp_160            Perception (local police) - Treating people fairly
+
+           VALUE  LABEL
+               1  Good job
+               2  Average job
+               3  Poor job
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/111
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                          Page 20
+
+
+      tip_10             Trust - Members of family
+
+           VALUE  LABEL
+               1  1 - Cannot be trusted at all
+               2  2
+               3  3
+               4  4
+               5  5 - Can be trusted a lot
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/113
+
+      ________________________________________________________________________
+
+      tip_15             Trust - People in neighbourhood
+
+           VALUE  LABEL
+               1  1 - Cannot be trusted at all
+               2  2
+               3  3
+               4  4
+               5  5 - Can be trusted a lot
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/115
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                          Page 21
+
+
+      tip_20             Trust - People from work or school
+
+           VALUE  LABEL
+               1  1- Cannot be trusted at all
+               2  2
+               3  3
+               4  4
+               5  5 - Can be trusted a lot
+               6  Does not go to school nor works
+              96  Valid skip
+              97  Don't know
+              98  Refusal
+              99  Not stated
+
+           Data type: numeric
+           Missing-data codes: 96-99
+           Record/columns: 1/117-118
+
+      ________________________________________________________________________
+
+      tip_25             Trust - Strangers
+
+           VALUE  LABEL
+               1  1 - Cannot be trusted at all
+               2  2
+               3  3
+               4  4
+               5  5 - Can be trusted a lot
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/120
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   March 18, 2022
+
+
+
+      GSS Cycle 28, 2014 Main                                          Page 22
+
+
+      totvic             Number of victimizations - Excludes (ex-)spousal/(ex-)partner
+
+           VALUE  LABEL
+               0  Not victimized
+               1  Victimized one time
+               2  Victimized two times
+               3  Victimized three or more times
+               6  Valid skip
+               7  Don't know
+               8  Refusal
+               9  Not stated
+
+           Data type: numeric
+           Missing-data codes: 6-9
+           Record/column: 1/122
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   March 18, 2022
