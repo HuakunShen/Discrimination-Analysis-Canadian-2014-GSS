@@ -104,9 +104,6 @@ class(gss_data_renamed$Ethnicity_or_Culture)
 ```
 
 
-
-
-
 ```{r, echo=FALSE, warning=FALSE}
 ggplot(data = data_cleaned) + 
   geom_histogram(aes(x = Have_Discrimination_Experience_in_5_years, fill = Discrimination_Reason), 
@@ -125,25 +122,118 @@ ggplot(data = data_cleaned) +
   scale_x_log10()
 ```
 
+# Impact of Gender on People's Confidence in Law Enforcement 
+After noting that the majority of discriminating cases are gender discrimination. We are wondering if this will also be reflected in people's confidence in Law Enforcement. To be a specific, if a certain gender group are more vulnerable to discrimination, will that group also be treated unfairly during law enforcement? To investigate this, we extracted some other survey results from Canadian General Social Survey.
 
-# Results
+## Data Overview
+Among all the available data in the Canadian General Social Survey(Victimization), we decide to choose the following subset: *CIP: Confidence In Police*, *DEM: Demographic Derived Variables*, *PCC: Perceptions: Criminal Courts*, *PLP: Perceptions: Local Police*, *TIP: Trust In People*. We will first find the number of each gender in the survey, if the number of respondents from each gender groups are uneven, then the result might be biased toward a gender group. After analyzing the survey data set, the following gender distribution is found, as shown in Figure \@ref(fig:gender-distribution). From the figure, we can see that the gender distribution are about the same, so we can proceed to further investigation.
 
-# Discussion
+```{r, include=FALSE}
+input_csv <- read_csv(here::here(
+  "inputs/data/The_Impact_of_sex_on_confidence_in_government.csv"
+))
 
-## First discussion point
+gender_group <- count(input_csv, sex)
+gender_group$sex[gender_group$sex==2] <- "Female"
+gender_group$sex[gender_group$sex==1] <- "Male"
+```
+
+```{r, gender-distribution, fig.cap='Gender Distribution', echo=FALSE, warning=FALSE, message = FALSE, fig.width=10, fig.height=5, fig.pos = "!H"}
+
+ggplot(data=gender_group, aes(x=sex, y=n)) +
+  geom_bar(stat="identity")
+
+```
+
+## Confidence In Police
+Now we will investigate people's confidence in police in different gender groups. People's response are categorized into 8 groups: *1  A great deal of confidence*, *2  Some confidence*, *3  Not very much confidence*, *4  No confidence at all*, *6  Valid skip*, *7  Don't know*, *8  Refusal*, *9  Not stated*. The following bar graph shows the distribution of the responses, categorized by gender groups, as shown in Figure \@ref(fig:cip-distribution). From the graph, we can see that the majority of respondents are confident in local police. To be specific, 92.8% of female show some or great confidence in local police, whereas 90% of male show some or great confidence in local police.
+
+```{r, include= FALSE}
+myvars <- c("sex", "cip_10")
+cip_based_on_gender <- input_csv[myvars]
+cip_based_on_gender<-cip_based_on_gender[!cip_based_on_gender$cip_10>=6,]
+cip_based_on_gender$sex[cip_based_on_gender$sex==2] <- "Female"
+cip_based_on_gender$sex[cip_based_on_gender$sex==1] <- "Male"
+cip_based_on_gender$cip_10[cip_based_on_gender$cip_10==1] <- "Great confidence"
+cip_based_on_gender$cip_10[cip_based_on_gender$cip_10==2] <- "Some confidence"
+cip_based_on_gender$cip_10[cip_based_on_gender$cip_10==3] <- "Small confidence"
+cip_based_on_gender$cip_10[cip_based_on_gender$cip_10==4] <- "No confidence"
+
+cip_count_based_on_gender <- table(cip_based_on_gender$sex, cip_based_on_gender$cip_10)
+
+```
 
 
+```{r, cip-distribution, fig.cap='Confidence in Police Distribution', echo=FALSE, warning=FALSE, message = FALSE, fig.width=10, fig.height=7, fig.pos = "!H"}
 
-## Second discussion point
+barplot(cip_count_based_on_gender, main="Confidence In Police Distribution",
+  xlab="Confidence Level", col=c("darkblue","red"), cex.names=.8,
+  legend = rownames(cip_count_based_on_gender), horiz=TRUE, beside=TRUE)
+```
 
-## Third discussion point
+Next, we will take a closer look at the responses of two other questions, they are *Perception (local police) - Being approachable and easy to talk to* and *Perception (local police) - Treating people fairly*. Those questions, especially the second one, will allow us to have more certainty in determining whether people in different gender groups are treated unfairly in Law Enforcement. Both of the questions have 7 valid choices, they are *1  Good job*, *2  Average job*, *3 Poor job*, *6  Valid skip*, *7  Don't know*, *8  Refusal*, *9  Not stated*. For simplicity, we will only consider the first 3. The distribution of the responses is shown in Figure \@ref(fig:pip-distribution1) and Figure \@ref(fig:pip-distribution2). From the figures, around 81% of male respondents think that police are approachable and around 80% of female respondents hold the same opinion. On top of that, around 77% of female respondents think that police treat people fairly and around 79% of male respondents hold the same opinion. In Conclusion, based on the results of the survey, majority of the respondents from all participating gender groups have confidence in police and agree that police is approachable and treat people fairly.
 
-## Weaknesses and next steps
+```{r, include = FALSE}
+myvars <- c("sex", "plp_130", "plp_140")
+pip_based_on_gender <- input_csv[myvars]
+pip_based_on_gender<-pip_based_on_gender[!(pip_based_on_gender$plp_130>=6 | pip_based_on_gender$plp_140>=6),]
+pip_based_on_gender$sex[pip_based_on_gender$sex==2] <- "Female"
+pip_based_on_gender$sex[pip_based_on_gender$sex==1] <- "Male"
+pip_based_on_gender$plp_130[pip_based_on_gender$plp_130==1] <- "Good Job"
+pip_based_on_gender$plp_130[pip_based_on_gender$plp_130==2] <- "Average Job"
+pip_based_on_gender$plp_130[pip_based_on_gender$plp_130==3] <- "Poor Job"
+
+pip_based_on_gender$plp_140[pip_based_on_gender$plp_140==1] <- "Good Job"
+pip_based_on_gender$plp_140[pip_based_on_gender$plp_140==2] <- "Average Job"
+pip_based_on_gender$plp_140[pip_based_on_gender$plp_140==3] <- "Poor Job"
+
+pip_count_based_on_gender_130 <- table(pip_based_on_gender$sex, pip_based_on_gender$plp_130)
+pip_count_based_on_gender_140 <- table(pip_based_on_gender$sex, pip_based_on_gender$plp_140)
+
+```
+
+```{r, pip-distribution1, fig.cap='Police is approachable', echo=FALSE, warning=FALSE, message = FALSE, fig.width=10, fig.height=7, fig.pos = "!H"}
+
+barplot(pip_count_based_on_gender_130, main="Police is Approachable and Polite",
+  xlab="Confidence Level", col=c("darkblue","red"), cex.names=.8,
+  legend = rownames(pip_count_based_on_gender_130), horiz=TRUE, beside=TRUE)
+```
 
 
+```{r, pip-distribution2, fig.cap='Police Treats People Fairly', echo=FALSE, warning=FALSE, message = FALSE, fig.width=10, fig.height=7, fig.pos = "!H"}
 
+barplot(pip_count_based_on_gender_140, main="Police Treats People Fairly",
+  xlab="Confidence Level", col=c("darkblue","red"), cex.names=.8,
+  legend = rownames(pip_count_based_on_gender_140), horiz=TRUE, beside=TRUE)
+```
 
+\newpage
 
+## Confidence In Criminal Courts
+After investigating different gender group's confidence in police, we will now take a look at people's confidence in criminal courts. Similarly, we will only look at the following three responses: *1  A great deal of confidence*,
+*2  Some confidence*, *3  Not very much confidence*, Figure \@ref(fig:pip-distribution3) shows the result.
+
+```{r, include = FALSE}
+myvars <- c("sex", "pcc_145")
+conf_in_court_based_on_gender <- input_csv[myvars]
+conf_in_court_based_on_gender<-conf_in_court_based_on_gender[!(conf_in_court_based_on_gender$pcc_145>=6),]
+conf_in_court_based_on_gender$sex[conf_in_court_based_on_gender$sex==2] <- "Female"
+conf_in_court_based_on_gender$sex[conf_in_court_based_on_gender$sex==1] <- "Male"
+conf_in_court_based_on_gender$pcc_145[conf_in_court_based_on_gender$pcc_145==1] <- "Great Confidence"
+conf_in_court_based_on_gender$pcc_145[conf_in_court_based_on_gender$pcc_145==2] <- "Some Confidence"
+conf_in_court_based_on_gender$pcc_145[conf_in_court_based_on_gender$pcc_145==3] <- "Not Very Much Confidence"
+conf_in_court_based_on_gender$pcc_145[conf_in_court_based_on_gender$pcc_145==4] <- "No Confidence"
+
+conf_in_court_based_on_gender <- table(conf_in_court_based_on_gender$sex, conf_in_court_based_on_gender$pcc_145)
+
+```
+
+```{r, pip-distribution3, fig.cap='Confidence in Criminal Courts', echo=FALSE, warning=FALSE, message = FALSE, fig.width=10, fig.height=7, fig.pos = "!H"}
+
+barplot(pip_count_based_on_gender_140, main="Confidence in Criminal Courts",
+  xlab="Confidence Level", col=c("darkblue","red"), cex.names=.8,
+  legend = rownames(pip_count_based_on_gender_140), horiz=TRUE, beside=TRUE)
+```
 
 \newpage
 
