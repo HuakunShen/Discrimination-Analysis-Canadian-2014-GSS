@@ -259,6 +259,7 @@ barplot(pip_count_based_on_gender_140, main="Confidence in Criminal Courts",
 \newpage
 
 
+<<<<<<< HEAD
 # Discussion
 
 ## Gender Discrimination in Law Enforcement
@@ -266,6 +267,8 @@ barplot(pip_count_based_on_gender_140, main="Confidence in Criminal Courts",
 Based on results of the survey, every gender group have a similar perception in police and criminal courts. However, it is still too early to conclude that there are no gender discrimination during law enforcement because of the limitations in the survey. In the original survey, when people are asked for their gender, only Male and Female are available to choose from, the other options are either "Valid Skip" or "Refusal", as a result, every survey respondent chose either "Male" or "Female". This makes the results very biased. Suppose that all the *Poor Job* votes are from a minority gender group, the results become deceptive because they were not able to select their own gender. 
 
 
+=======
+>>>>>>> parent of 5364bb1 (Data and Results, deleted pdf)
 # References
 
 

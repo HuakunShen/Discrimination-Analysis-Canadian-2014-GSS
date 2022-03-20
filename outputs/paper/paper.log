@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.8)  20 MAR 2022 19:05
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.8)  20 MAR 2022 00:18
+>>>>>>> parent of 5364bb1 (Data and Results, deleted pdf)
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -654,35 +658,60 @@ line 175.
 
 [1
 
+<<<<<<< HEAD
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 <paper_files/figure-latex/unnamed-chunk-4-1.pdf, id=54, 453.695pt x 315.1775pt>
+=======
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<paper_files/figure-latex/unnamed-chunk-4-1.pdf, id=39, 453.695pt x 315.1775pt>
+>>>>>>> parent of 5364bb1 (Data and Results, deleted pdf)
 
 File: paper_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/unnamed-chunk-4-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/unnamed-chunk-4-1.pdf  used o
+<<<<<<< HEAD
 n input line 214.
 (pdftex.def)             Requested size: 453.6939pt x 315.17673pt.
 <paper_files/figure-latex/unnamed-chunk-5-1.pdf, id=55, 453.695pt x 315.1775pt>
+=======
+n input line 188.
+(pdftex.def)             Requested size: 453.6939pt x 315.17673pt.
+<paper_files/figure-latex/unnamed-chunk-5-1.pdf, id=40, 453.695pt x 315.1775pt>
+>>>>>>> parent of 5364bb1 (Data and Results, deleted pdf)
 
 File: paper_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/unnamed-chunk-5-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/unnamed-chunk-5-1.pdf  used o
+<<<<<<< HEAD
 n input line 216.
 (pdftex.def)             Requested size: 453.6939pt x 315.17673pt.
 [3 <./paper_files/figure-latex/unnamed-chunk-4-1.pdf>]
 <paper_files/figure-latex/gender-distribution-1.pdf, id=67, 710.655pt x 349.305
+=======
+n input line 190.
+(pdftex.def)             Requested size: 453.6939pt x 315.17673pt.
+[2 <./paper_files/figure-latex/unnamed-chunk-4-1.pdf>]
+<paper_files/figure-latex/gender-distribution-1.pdf, id=58, 710.655pt x 349.305
+>>>>>>> parent of 5364bb1 (Data and Results, deleted pdf)
 pt>
 File: paper_files/figure-latex/gender-distribution-1.pdf Graphic file (type pdf
 )
 <use paper_files/figure-latex/gender-distribution-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/gender-distribution-1.pdf  us
+<<<<<<< HEAD
 ed on input line 225.
 (pdftex.def)             Requested size: 469.77112pt x 230.90443pt.
 <paper_files/figure-latex/cip-distribution-1.pdf, id=69, 663.47874pt x 466.7437
+=======
+ed on input line 204.
+(pdftex.def)             Requested size: 469.77112pt x 230.90443pt.
+<paper_files/figure-latex/cip-distribution-1.pdf, id=60, 663.47874pt x 466.7437
+>>>>>>> parent of 5364bb1 (Data and Results, deleted pdf)
 4pt>
 File: paper_files/figure-latex/cip-distribution-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/cip-distribution-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/cip-distribution-1.pdf  used 
+<<<<<<< HEAD
 on input line 236.
 (pdftex.def)             Requested size: 469.7571pt x 330.46452pt.
 <paper_files/figure-latex/pip-distribution1-1.pdf, id=72, 663.47874pt x 466.743
@@ -721,25 +750,78 @@ nored
                                                   \fi \fi 
 l.254 \newpage
                <./paper_files/figure-latex/pip-distribution1-1.pdf>] [7pdfTeX w
+=======
+on input line 215.
+(pdftex.def)             Requested size: 469.7571pt x 330.46452pt.
+[3 <./paper_files/figure-latex/unnamed-chunk-5-1.pdf>] [4pdfTeX warning (ext4):
+ destination with the same identifier (name{figure.1}) has been already used, d
+uplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.220 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.220 
+       <./paper_files/figure-latex/gender-distribution-1.pdf> <./paper_files/fi
+gure-latex/cip-distribution-1.pdf>]
+<paper_files/figure-latex/pip-distribution1-1.pdf, id=102, 663.47874pt x 466.74
+374pt>
+File: paper_files/figure-latex/pip-distribution1-1.pdf Graphic file (type pdf)
+<use paper_files/figure-latex/pip-distribution1-1.pdf>
+Package pdftex.def Info: paper_files/figure-latex/pip-distribution1-1.pdf  used
+ on input line 223.
+(pdftex.def)             Requested size: 469.7571pt x 330.46452pt.
+<paper_files/figure-latex/pip-distribution2-1.pdf, id=103, 663.47874pt x 466.74
+374pt>
+File: paper_files/figure-latex/pip-distribution2-1.pdf Graphic file (type pdf)
+<use paper_files/figure-latex/pip-distribution2-1.pdf>
+Package pdftex.def Info: paper_files/figure-latex/pip-distribution2-1.pdf  used
+ on input line 229.
+(pdftex.def)             Requested size: 469.7571pt x 330.46452pt.
+[5pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.233 \newpage
+               <./paper_files/figure-latex/pip-distribution1-1.pdf>] [6pdfTeX w
+>>>>>>> parent of 5364bb1 (Data and Results, deleted pdf)
 arning (ext4): destination with the same identifier (name{figure.4}) has been a
 lready used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
+<<<<<<< HEAD
 l.254 \newpage
                <./paper_files/figure-latex/pip-distribution2-1.pdf>]
 <paper_files/figure-latex/pip-distribution3-1.pdf, id=137, 663.47874pt x 466.74
+=======
+l.233 \newpage
+               <./paper_files/figure-latex/pip-distribution2-1.pdf>]
+<paper_files/figure-latex/pip-distribution3-1.pdf, id=131, 663.47874pt x 466.74
+>>>>>>> parent of 5364bb1 (Data and Results, deleted pdf)
 374pt>
 File: paper_files/figure-latex/pip-distribution3-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/pip-distribution3-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/pip-distribution3-1.pdf  used
+<<<<<<< HEAD
  on input line 264.
 (pdftex.def)             Requested size: 469.7571pt x 330.46452pt.
 [8pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) 
+=======
+ on input line 243.
+(pdftex.def)             Requested size: 469.7571pt x 330.46452pt.
+[7pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) 
+>>>>>>> parent of 5364bb1 (Data and Results, deleted pdf)
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
+<<<<<<< HEAD
 l.268 \newpage
                <./paper_files/figure-latex/pip-distribution3-1.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -750,11 +832,24 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 307.
 (./paper.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 307.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 307.
+=======
+l.247 \newpage
+               <./paper_files/figure-latex/pip-distribution3-1.pdf>]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 256.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 275.
+[8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 275.
+(./paper.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 275.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 275.
+>>>>>>> parent of 5364bb1 (Data and Results, deleted pdf)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  14752 strings out of 481239
  215492 string characters out of 5920378
  509453 words of memory out of 5000000
@@ -762,6 +857,15 @@ Here is how much of TeX's memory you used:
  603926 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,7n,42p,1298b,335s stack positions out of 5000i,500n,10000p,200000b,80000s
+=======
+ 14714 strings out of 481239
+ 215012 string characters out of 5920378
+ 508343 words of memory out of 5000000
+ 29556 multiletter control sequences out of 15000+600000
+ 602518 words of font info for 115 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,7n,42p,1298b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
+>>>>>>> parent of 5364bb1 (Data and Results, deleted pdf)
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/l
@@ -770,10 +874,19 @@ m/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf
 pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmri10.pfb>
+<<<<<<< HEAD
 Output written on paper.pdf (9 pages, 281598 bytes).
 PDF statistics:
  284 PDF objects out of 1000 (max. 8388607)
  239 compressed objects within 3 object streams
  61 named destinations out of 1000 (max. 500000)
  16548 words of extra memory for PDF output out of 17280 (max. 10000000)
+=======
+Output written on paper.pdf (8 pages, 275797 bytes).
+PDF statistics:
+ 264 PDF objects out of 1000 (max. 8388607)
+ 220 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
+ 16532 words of extra memory for PDF output out of 17280 (max. 10000000)
+>>>>>>> parent of 5364bb1 (Data and Results, deleted pdf)
 
