@@ -54,13 +54,27 @@ You can and should cross-reference sections and sub-sections. For instance, Sect
 # Data
 We started our analysis by using R [@citeR], dplyr[@dplyr], tidyverse[@tidyverse], here[@here]. Graphs are generated using and ggplot2[@ggplot2] and kableExtra[@kableExtra].
 
-## Date Source
+## Data Source
+We retrieved our data from CHASS [@chass]. Among all the available data in the Canadian General Social Survey(Victimization), we decide to choose the following subset: *DIS: Discrimination*, *DTS: Discrimination - Types of Situations experienced by respondent*, *CIP: Confidence In Police*, *DEM: Demographic Derived Variables*, *PCC: Perceptions: Criminal Courts*, *PLP: Perceptions: Local Police*, *TIP: Trust In People*. The GSS program, established in 1985, conducts surveys annually across the 10 provinces. The GSS is recognized for its regular collection of cross-sectional data that allows for trend analysis, and its capacity to test and develop new concepts that address current and emerging issues. The two primary objectives of the General Social Survey are: 
+a)  to gather data on social trends in order to monitor changes in the living conditions and well-being 
+of Canadians over time; and 
+b)  to provide immediate information on specific social policy issues of current or emerging interest. 
+
+To meet these objectives, the data collected by the GSS are made up of two components: classification and core content. Classification content (such as age, sex, education, income) helps to delineate population groups for use in the analysis of core data. Core content is designed to measure changes in society related to living conditions and well-being and to supply data to inform specific policy issues[@chass]. 
+
+Data for 2014 General Social Survey (GSS) on Canadians’ Safety and Security (Victimization) was collected from January to December, 2014. The survey collected a large amount of information for each selected respondent as well as some information about each member of the respondent’s household. The overall response rate was 52.9%. The target population for the Cycle 28 GSS included all persons 15 years of age and older in Canada, excluding: 
+1. Residents of the Yukon, Northwest Territories, and Nunavut; 
+2. Full-time residents of institutions. 
+The survey frame was created using two different components: 
+•  Lists of telephone numbers in use (both landline and cellular) available to Statistics Canada from various sources (Telephone companies, Census of population, etc.); 
+•  The Address Register (AR): List of all dwellings within the ten provinces. 
+
 
 ## Methodology and Data Collection
 
 ```{r, include=FALSE, warning=FALSE}
 gss_data <-
-  read_csv(here::here("inputs/data/Discrimination.csv"))
+  read_csv(here::here("inputs/data/data.csv"))
 glimpse(gss_data)
 ```
 
@@ -103,8 +117,30 @@ class(gss_data_renamed$Ethnicity_or_Culture)
 
 ```
 
+The survey started with an entry section. The purpose of this section is to introduce the survey and select a respondent. A Household Roster is created, which collects key demographic information on each member of the household, including age, sex and marital status. Selected respondents are asked for their birth date and confirmation of their age (ANC). They are also asked to confirm their marital status (CMR) if another household member provided the roster information. Age and marital status are used to determine if certain questions are asked later in the survey. Age and date of birth are also used for certain derived variables and to validate responses where ages are involved[@chass].
 
-```{r, echo=FALSE, warning=FALSE}
+When a probability sample is used, as is the case for the GSS, the principle behind estimation is that each person selected in the sample represents (in addition to himself or herself) several other persons not in the sample. Computer assisted telephone interviewing (CATI) was used to collect data for the 2014 GSS VIC. Respondents were interviewed in the official language of their choice. Proxy interviews were not permitted. In each frame, each record was assigned to a stratum within its province. A simple random sample without replacement of records was next selected in each stratum. Only specific geographies were targeted for the oversample of immigrants and youth[@chass].
+
+Coverage of the 2014 GSS on Canadians’ Safety and Security (Victimization) targeted population by the survey frame is estimated to be more than 86% complete. All respondents in the ten provinces were interviewed by telephone. Households without telephones were therefore excluded. During collection, for the households not meeting the eligibility criteria, the interviews were terminated after an initial set of questions that established whether or not they met the criteria. For the oversample cases, an extra question was asked to determine if each person in the household was born in Canada or not. For the 2014 GSS on Canadians’ Safety and Security (Victimization), 81.5% of the telephone numbers dialed reached eligible households. An attempt was then made to conduct an interview with one randomly selected person from each household. Interviewers were instructed to make all reasonable attempts to obtain a completed interview with the randomly selected member of the household. Those who at first refused to participate were re-contacted up to two more times to explain the importance of the survey and to encourage their participation[@chass].
+
+The target sample size (i.e. the number of respondents) for Cycle 28 on Canadians’ Safety and Security (Victimization) was 39,674, while the actual number of respondents was 33,127. Some GSS respondents were removed from the PUMF for confidentiality reasons. GSS Cycle 28 PUMF contains questionnaire responses and associated information from 33,089 respondents. For each province, minimum sample sizes were determined that would ensure certain estimates would have acceptable sampling variability at the stratum level. Once these stratum sample size targets had been met, the remaining sample was allocated to the strata in a way that balanced the need for precision of both national-level and stratum-level estimates[@chass].
+
+One of the strengths of this survey is that it captures various potential factors that could have significant relationship with victimization. Also, it mainly focuses on gathering information within 5 years which is a more accurate approach for the respondent to retrieve a recent memory. However, this also comes with a trade-off that we could not compare the information in earlier periods. Dealing with non-responses is a common problem for every survey. In the GSS, the answers for each question provided different situations for the respondent to choose including Yes, No, Valid skip, Don’t know, Refusal, and Not stated. As a result, even though the existence of non-response could not be eliminated, the gathered data would provide a good sense of why the respondent could not offer a clear answer.
+
+Another trade-off is that the general social survey is a relatively long to capture various information which may lead to impatience of answering and errors in responding. Typically, long questionnaires could involve a fake question to check if the respondent is reading the questions carefully and providing sincere answers. For some scenario questions, investigators like us would also like to obtain further elaborations. So we also include a supplementary survey to gather more detailed information about discriminations.
+
+
+
+
+\newpage
+#Results
+## Classification of Discrimination
+The identification of discrimination could be vague and inconsistent in different regions. According to Human rights in Ontario[@humanrights], there are four forms of discrimination: direct, indirect, subtle, and adverse effect discrimination; Harassment; Poisoned environment; Systemic discrimination. Discrimination often derives from different backgrounds and identities. Based on unique combination of identities, people may be exposed to specific forms of discrimination and may experience significant personal harm. The 2014 GSS on Canadians’ Safety and Security (Victimization) mainly captured gender, disability, and ethnicity. It also provides information of the condition when discrimination happens. According to Figure \@ref(fig:discrimination-reason), the most common reason of discrimination within 5 years is sex and ethnicity. In addition, physical appearance, age and language are also typical reasons of discrimination.
+
+
+
+
+```{r, discrimination-reason, fig.cap="discrimination Reason", echo=FALSE, warning=FALSE}
 ggplot(data = data_cleaned) + 
   geom_histogram(aes(x = Have_Discrimination_Experience_in_5_years, fill = Discrimination_Reason), 
                  position = 'dodge', 
@@ -113,7 +149,9 @@ ggplot(data = data_cleaned) +
   scale_x_log10()
 ```
 
-```{r, echo=FALSE, warning=FALSE}
+Under many circumstances, the government has established regulations to protect human rights. For example, the Canadian Human Rights Act is a broad-reaching piece of legislation that prohibits discrimination on the basis of gender, race, ethnicity and other grounds. Also, Canada's Employment Equity Act and the Federal Contractors Program require employers to take active measures to improve the employment opportunities for specific groups of people in our country. Both the labour rights and responsibilities of employers and employees within federally regulated sectors fall under the Canada Labour Code. The rights of foreign workers in Canada are also protected under federal or provincial/territorial labour laws. However, we could still see that discrimination experience is significantly common under working environment in \@ref(fig:discrimination-experience). Bank, store, and restaurant are the most common location for discrimination to take place while the Canadian border and courts are the least common location for discrimination to happen.
+
+```{r, discrimination-experience, fig.cap="discrimination Experience", echo=FALSE, warning=FALSE}
 ggplot(data = data_cleaned) + 
   geom_histogram(aes(x = Have_Discrimination_Experience_in_5_years, fill = Discrimination_Experience), 
                  position = 'dodge', 
@@ -122,11 +160,10 @@ ggplot(data = data_cleaned) +
   scale_x_log10()
 ```
 
-# Impact of Gender on People's Confidence in Law Enforcement 
-After noting that the majority of discriminating cases are gender discrimination. We are wondering if this will also be reflected in people's confidence in Law Enforcement. To be a specific, if a certain gender group are more vulnerable to discrimination, will that group also be treated unfairly during law enforcement? To investigate this, we extracted some other survey results from Canadian General Social Survey.
+## Impact of Gender on People's Confidence in Law Enforcement 
+After noting that the majority of discriminating cases are gender discrimination. We are wondering if this will also be reflected in people's confidence in Law Enforcement. To be a specific, if a certain gender group are more vulnerable to discrimination, will that group also be treated unfairly during law enforcement? To investigate this, we extracted some other survey results from Canadian General Social Survey. We will first find the number of each gender in the survey, if the number of respondents from each gender groups are uneven, then the result might be biased toward a gender group. After analyzing the survey data set, the following gender distribution is found, as shown in Figure \@ref(fig:gender-distribution). From the figure, we can see that the gender distribution are about the same, so we can proceed to further investigation.
 
-## Data Overview
-Among all the available data in the Canadian General Social Survey(Victimization), we decide to choose the following subset: *CIP: Confidence In Police*, *DEM: Demographic Derived Variables*, *PCC: Perceptions: Criminal Courts*, *PLP: Perceptions: Local Police*, *TIP: Trust In People*. We will first find the number of each gender in the survey, if the number of respondents from each gender groups are uneven, then the result might be biased toward a gender group. After analyzing the survey data set, the following gender distribution is found, as shown in Figure \@ref(fig:gender-distribution). From the figure, we can see that the gender distribution are about the same, so we can proceed to further investigation.
+
 
 ```{r, include=FALSE}
 input_csv <- read_csv(here::here(
@@ -238,6 +275,13 @@ barplot(pip_count_based_on_gender_140, main="Confidence in Criminal Courts",
 \newpage
 
 
-# References
+# Discussion
+
+## Gender Discrimination in Law Enforcement
+
+Based on results of the survey, every gender group have a similar perception in police and criminal courts. However, it is still too early to conclude that there are no gender discrimination during law enforcement because of the limitations in the survey. In the original survey, when people are asked for their gender, only Male and Female are available to choose from, the other options are either "Valid Skip" or "Refusal", as a result, every survey respondent chose either "Male" or "Female". This makes the results very biased. Suppose that all the *Poor Job* votes are from a minority gender group, the results become deceptive because they were not able to select their own gender. 
+
+
+# Reference
 
 
