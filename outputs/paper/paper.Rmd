@@ -312,7 +312,15 @@ The education levels are mutually exclusive (i.e. if a respondent select "Yes" f
 
 Within Figure \@ref(fig:crime-count-plot-by-education), the subplot "University Education Crime Count" has a obviously different shape from the other 2 education level.
 
-It seems like samples with University Education have higher chance of getting "Sexual Assault" and "Theft of personal property".
+It seems like samples with University Education have higher chance of getting "Sexual Assault", "Vandalism" "Theft of household property".
+Higher "Theft of household property" and "Vandalism" count can be easily explained by, people with higher education may have higher income (higher household property value) which could attract theft. 
+
+I couldn't find a good explanation high "Sexual Assault" for university-education population.
+
+## Discrimination VS Crime
+
+
+
 
 
 \newpage
@@ -323,6 +331,8 @@ It seems like samples with University Education have higher chance of getting "S
 ## Gender Discrimination in Law Enforcement
 
 Based on results of the survey, every gender group have a similar perception in police and criminal courts. However, it is still too early to conclude that there are no gender discrimination during law enforcement because of the limitations in the survey. In the original survey, when people are asked for their gender, only Male and Female are available to choose from, the other options are either "Valid Skip" or "Refusal", as a result, every survey respondent chose either "Male" or "Female". This makes the results very biased. Suppose that all the *Poor Job* votes are from a minority gender group, the results become deceptive because they were not able to select their own gender. 
+
+
 
 # Appendix
 
@@ -366,42 +376,6 @@ physical_mental_disability_crime_plot
 language_crime_plot
 ```
 
-```{r fig.width=8, fig.height=5, echo=FALSE, warning=FALSE, message = FALSE}
-cross_compare_barplot(data=gss_data,
-                      col1 = "eor_01c", col2 = "msvic",
-                      col1_num=eor_01c_num, col1_labels=eor_01c_label,
-                      col2_num=msvic_num, col2_labels=msvic_labels, 
-                      plot_title="University Education VS Crime",
-                      plot_subtitle="",
-                      plot_xlab="Crime",
-                      plot_ylab="Percentage", 
-                      plot_fill_lab="University Education")
-```
-
-
-```{r fig.width=8, fig.height=5, echo=FALSE, warning=FALSE, message = FALSE}
-cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eor_01b < 3),
-                      col1 = "eor_01b", col2 = "msvic",
-                      col1_num=eor_01b_num, col1_labels=eor_01b_label,
-                      col2_num=msvic_num, col2_labels=msvic_labels, 
-                      plot_title="College Education VS Crime",
-                      plot_subtitle="",
-                      plot_xlab="Crime", 
-                      plot_ylab="Percentage", 
-                      plot_fill_lab="college Education")
-```
-
-```{r fig.width=8, fig.height=5, echo=FALSE, warning=FALSE, message = FALSE}
-cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eor_01a < 3),
-                      col1 = "eor_01a", col2 = "msvic",
-                      col1_num=eor_01a_num, col1_labels=eor_01a_label,
-                      col2_num=msvic_num, col2_labels=msvic_labels, 
-                      plot_title="Elementary School Education VS Crime",
-                      plot_subtitle="",
-                      plot_xlab="Crime", 
-                      plot_ylab="Percentage",
-                      plot_fill_lab="Elementary School Education")
-```
 
 ```{r fig.width=8, fig.height=5, echo=FALSE, warning=FALSE, message = FALSE}
 cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eduf10 < 6),
@@ -409,7 +383,7 @@ cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eduf10 < 
                       col1_num=eduf10_num, col1_labels=eduf10_labels,
                       col2_num=msvic_num, col2_labels=msvic_labels, 
                       plot_title="Father Education VS Crime", 
-                      plot_subtitle="Sex Discrimination has an obvious correlation with Sexual Assault", 
+                      plot_subtitle="Relatively low crime rate for all crimes", 
                       plot_xlab="Crime", 
                       plot_ylab="Percentage of Father Education", 
                       plot_fill_lab="Education")

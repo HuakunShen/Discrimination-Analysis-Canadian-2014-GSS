@@ -9,9 +9,9 @@ sex_crime_plot <- cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>
                                         col1_num=dis_10_num, col1_labels=dis_10_labels,
                                         col2_num=msvic_num, col2_labels=msvic_labels, 
                                         plot_title="Sex Discrimination VS Crime", 
-                                        plot_subtitle="Sex Discrimination has an obvious correlation with Sexual Assault", 
+                                        plot_subtitle="High sexual assault rate",
                                         plot_xlab="Crime", 
-                                        plot_ylab="Percentage of Sex Discrimination", 
+                                        plot_ylab="Percentage", 
                                         plot_fill_lab="Sex Discrimination")
 
 culture_crime_plot <- cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(dis_15 < 3),
@@ -20,9 +20,9 @@ culture_crime_plot <- cross_compare_barplot(data=gss_data %>% filter(msvic < 900
                                             col1_num=dis_10_num, col1_labels=dis_10_labels,
                                             col2_num=msvic_num, col2_labels=msvic_labels,
                                             plot_title="Ethnicity or culture Discrimination VS Crime", 
-                                            plot_subtitle="Ethnicity or culture Discrimination has an obvious correlation with Sexual Assault", 
+                                            plot_subtitle="Very high crime rate for robbery, and high crime rate for many other crimes",
                                             plot_xlab="Crime", 
-                                            plot_ylab="Percentage of Ethnicity or culture Discrimination", 
+                                            plot_ylab="Percentage", 
                                             plot_fill_lab="Ethnicity or culture Discrimination")
 
 race_skin_crime_plot <- cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(dis_20 < 3), 
@@ -31,9 +31,9 @@ race_skin_crime_plot <- cross_compare_barplot(data=gss_data %>% filter(msvic < 9
                                               col1_num=dis_10_num, col1_labels=dis_10_labels,
                                               col2_num=msvic_num, col2_labels=msvic_labels,
                                               plot_title="Race and Skin Color Discrimination VS Crime", 
-                                              plot_subtitle="Sex Discrimination has an obvious correlation with Sexual Assault", 
+                                              plot_subtitle="Relatively high crime rate in many crimes",
                                               plot_xlab="Crime", 
-                                              plot_ylab="Percentage of Race and Skin Color Discrimination", 
+                                              plot_ylab="Percentage", 
                                               plot_fill_lab="Race and Skin Color Discrimination")
 
 physical_appearance_crime_plot <- cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(dis_25 < 3),
@@ -41,10 +41,10 @@ physical_appearance_crime_plot <- cross_compare_barplot(data=gss_data %>% filter
                                                         col2 = "msvic",
                                                         col1_num=dis_10_num, col1_labels=dis_10_labels,
                                                         col2_num=msvic_num, col2_labels=msvic_labels,
-                                                        plot_title="Physical appearance Discrimination VS Crime", 
-                                                        plot_subtitle="Sex Discrimination has an obvious correlation with Sexual Assault", 
+                                                        plot_title="Physical appearance Discrimination VS Crime",
+                                                        plot_subtitle="Very high attempted robbery, high robbery and sexual assault",
                                                         plot_xlab="Crime", 
-                                                        plot_ylab="Percentage of Physical appearance Discrimination", 
+                                                        plot_ylab="Percentage", 
                                                         plot_fill_lab="Physical appearance Discrimination")
 
 religion_crime_plot <- cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(dis_30 < 3),
@@ -53,9 +53,9 @@ religion_crime_plot <- cross_compare_barplot(data=gss_data %>% filter(msvic < 90
                                              col1_num=dis_10_num, col1_labels=dis_10_labels,
                                              col2_num=msvic_num, col2_labels=msvic_labels,
                                              plot_title="Religion Discrimination VS Crime", 
-                                             plot_subtitle="Sex Discrimination has an obvious correlation with Sexual Assault", 
+                                             plot_subtitle="Relatively low for all crimes", 
                                              plot_xlab="Crime", 
-                                             plot_ylab="Percentage of Religion Discrimination", 
+                                             plot_ylab="Percentage", 
                                              plot_fill_lab="Religion Discrimination")
 
 sexual_orientation_crime_plot <- cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(dis_35 < 3),
@@ -64,9 +64,9 @@ sexual_orientation_crime_plot <- cross_compare_barplot(data=gss_data %>% filter(
                                                        col1_num=dis_10_num, col1_labels=dis_10_labels,
                                                        col2_num=msvic_num, col2_labels=msvic_labels,
                                                        plot_title="Sexual orientation Discrimination VS Crime", 
-                                                       plot_subtitle="Sexual orientation Discrimination has an obvious correlation with Sexual Assault", 
+                                                       plot_subtitle="Very low for all crimes except for attempted robbery and sexual assault",
                                                        plot_xlab="Crime",
-                                                       plot_ylab="Percentage ofRace and Skin Color Discrimination",
+                                                       plot_ylab="Percentage",
                                                        plot_fill_lab="Sexual orientation Discrimination")
 
 
@@ -75,10 +75,10 @@ age_crime_plot <- cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>
                                         col2 = "msvic",
                                         col1_num=dis_10_num, col1_labels=dis_10_labels,
                                         col2_num=msvic_num, col2_labels=msvic_labels,
-                                        plot_title="Age Discrimination VS Crime", 
-                                        plot_subtitle="Age Discrimination has an obvious correlation with Sexual Assault", 
+                                        plot_title="Age Discrimination VS Crime",
+                                        plot_subtitle="High (attempted) robbery, and attempted theft of household property",
                                         plot_xlab="Crime",
-                                        plot_ylab="Percentage ofRace and Skin Color Discrimination",
+                                        plot_ylab="Percentage",
                                         plot_fill_lab="Age Discrimination")
 
 physical_mental_disability_crime_plot <- cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(dis_45 < 3),
@@ -87,9 +87,9 @@ physical_mental_disability_crime_plot <- cross_compare_barplot(data=gss_data %>%
                                                                col1_num=dis_10_num, col1_labels=dis_10_labels,
                                                                col2_num=msvic_num, col2_labels=msvic_labels,
                                                                plot_title="Physical or mental disability Discrimination VS Crime", 
-                                                               plot_subtitle="Physical or mental disability Discrimination has an obvious correlation with Sexual Assault", 
+                                                               plot_subtitle="High Attempted Robbery", 
                                                                plot_xlab="Crime",
-                                                               plot_ylab="Percentage ofRace and Skin Color Discrimination",
+                                                               plot_ylab="Percentage",
                                                                plot_fill_lab="Physical or mental disability Discrimination")
 
 
@@ -99,9 +99,9 @@ language_crime_plot <- cross_compare_barplot(data=gss_data %>% filter(msvic < 90
                                              col1_num=dis_10_num, col1_labels=dis_10_labels,
                                              col2_num=msvic_num, col2_labels=msvic_labels,
                                              plot_title="Language Discrimination VS Crime", 
-                                             plot_subtitle="Language Discrimination has an obvious correlation with Sexual Assault", 
+                                             plot_subtitle="Low crime rate for all crimes", 
                                              plot_xlab="Crime",
-                                             plot_ylab="Percentage ofRace and Skin Color Discrimination",
+                                             plot_ylab="Percentage",
                                              plot_fill_lab="Language Discrimination")
 
 
