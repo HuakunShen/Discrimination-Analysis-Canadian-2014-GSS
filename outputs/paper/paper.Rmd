@@ -299,11 +299,13 @@ Theft, assault, and break and enter happen most frequently.
 ### Crime Count By Education Level
 
 ```{r crime-count-plot-by-education, fig.cap="Crime By Education Level", echo=FALSE, warning=FALSE, message = FALSE, fig.height=6, fig.width=8}
-# university_crime_count
+university_crime_count
 grid.arrange(university_crime_count,
             college_crime_count,
             elementary_crime_count,
             nrow=1)
+
+# sex_crime_plot
 ```
 
 Figure \@ref(fig:crime-count-plot-by-education) show the same crime count but differentiated by education level.
@@ -336,43 +338,41 @@ Based on results of the survey, every gender group have a similar perception in 
 
 # Appendix
 
+I plotted the relationships between all discrimination types and crime categories from Figure \@ref(fig:sex_crime_plot) to Figure \@ref(fig:language_crime_plot).
 
-
-# Appendix
-
-```{r sex_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r sex-crime-plot, fig.cap="Sex Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE, fig.height=6, fig.width=8}
 sex_crime_plot
 ```
 
-```{r culture_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r, culture-crime-plot, fig.cap="Ethnicity or culture Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 culture_crime_plot
 ```
 
-```{r race_skin_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r, race-skin-crime-plot, fig.cap="Race and Skin Color Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 race_skin_crime_plot
 ```
 
-```{r physical_appearance_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r physical-appearance-crime-plot, fig.cap="Physical appearance Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 physical_appearance_crime_plot
 ```
 
-```{r religion_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r religion-crime-plot, fig.cap="Religion Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 religion_crime_plot
 ```
 
-```{r sexual_orientation_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r sexual-orientation-crime-plot, fig.cap="Sexual orientation Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 sexual_orientation_crime_plot
 ```
 
-```{r age_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r age-crime-plot, fig.cap="Age Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 age_crime_plot
 ```
 
-```{r physical_mental_disability_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r physical-mental-disability-crime-plot, fig.cap="Physical or mental disability Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 physical_mental_disability_crime_plot
 ```
 
-```{r language_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r language-crime-plot, fig.cap="Language Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 language_crime_plot
 ```
 
