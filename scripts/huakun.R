@@ -4,7 +4,6 @@ library(ggplot2)
 library(gridExtra)
 library(kableExtra)
 library(here)
-library(hash)
 
 source(here::here("scripts/constants.R"))
 

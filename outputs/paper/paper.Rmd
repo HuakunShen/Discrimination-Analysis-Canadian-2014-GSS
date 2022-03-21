@@ -303,6 +303,8 @@ grid.arrange(university_crime_count,
             college_crime_count,
             elementary_crime_count,
             nrow=1)
+
+# sex_crime_plot
 ```
 
 Figure \@ref(fig:crime-count-plot-by-education) show the same crime count but differentiated by education level.
