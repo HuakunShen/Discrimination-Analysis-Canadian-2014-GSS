@@ -35,15 +35,22 @@ bibliography: references.bib
 ### 4 Reference\
 ------------------------------------------------------------------------------------------------10
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
 
 library(tidyverse)
 library(dplyr)
 library(ggplot2)
 library(kableExtra)
 library(here)
+library(gridExtra)
 
+source(here::here("scripts/constants.R"))
+source(here::here("scripts/cross-compare-barplot.R"))
+source(here::here("scripts/cross-compare-plots.R"))
+source(here::here("scripts/crime-count.R"))
 ```
+
+
 
 # Introduction
 
@@ -133,8 +140,10 @@ Another trade-off is that the general social survey is a relatively long to capt
 
 
 \newpage
-#Results
+# Results
+
 ## Classification of Discrimination
+
 The identification of discrimination could be vague and inconsistent in different regions. According to Human rights in Ontario[@humanrights], there are four forms of discrimination: direct, indirect, subtle, and adverse effect discrimination; Harassment; Poisoned environment; Systemic discrimination. Discrimination often derives from different backgrounds and identities. Based on unique combination of identities, people may be exposed to specific forms of discrimination and may experience significant personal harm. The 2014 GSS on Canadians’ Safety and Security (Victimization) mainly captured gender, disability, and ethnicity. It also provides information of the condition when discrimination happens. According to Figure \@ref(fig:discrimination-reason), the most common reason of discrimination within 5 years is sex and ethnicity. In addition, physical appearance, age and language are also typical reasons of discrimination.
 
 
@@ -272,6 +281,25 @@ barplot(pip_count_based_on_gender_140, main="Confidence in Criminal Courts",
   legend = rownames(pip_count_based_on_gender_140), horiz=TRUE, beside=TRUE)
 ```
 
+
+```{r crime-plot, echo=FALSE, warning=FALSE, message = FALSE, fig.height=6, fig.width=8}
+subset_data = gss_data %>% filter(msvic < 900)  # ignore invalid responses
+subset_data %>% 
+  left_join(as.data.frame(list(msvic=msvic_num, msvic_label=msvic_labels))) %>%
+  ggplot(aes(as.factor(msvic_label), fill=msvic_label)) + geom_histogram(stat="count") + 
+  theme(axis.text.x = element_text(angle = 60, hjust = 1)) + xlab("Crime") +
+  labs(title = "Crime Count", fill="Crime Category")
+```
+
+```{r crime-count-plot-by-education, echo=FALSE, warning=FALSE, message = FALSE, fig.height=6, fig.width=8}
+# university_crime_count
+grid.arrange(university_crime_count,
+            college_crime_count,
+            elementary_crime_count,
+            nrow=1)
+```
+
+
 \newpage
 
 
@@ -281,7 +309,103 @@ barplot(pip_count_based_on_gender_140, main="Confidence in Criminal Courts",
 
 Based on results of the survey, every gender group have a similar perception in police and criminal courts. However, it is still too early to conclude that there are no gender discrimination during law enforcement because of the limitations in the survey. In the original survey, when people are asked for their gender, only Male and Female are available to choose from, the other options are either "Valid Skip" or "Refusal", as a result, every survey respondent chose either "Male" or "Female". This makes the results very biased. Suppose that all the *Poor Job* votes are from a minority gender group, the results become deceptive because they were not able to select their own gender. 
 
+# Appendix
+
+
+
+# Appendix
+
+```{r sex_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+sex_crime_plot
+```
+
+```{r culture_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+culture_crime_plot
+```
+
+```{r race_skin_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+race_skin_crime_plot
+```
+
+```{r physical_appearance_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+physical_appearance_crime_plot
+```
+
+```{r religion_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+religion_crime_plot
+```
+
+```{r sexual_orientation_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+sexual_orientation_crime_plot
+```
+
+```{r age_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+age_crime_plot
+```
+
+```{r physical_mental_disability_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+physical_mental_disability_crime_plot
+```
+
+```{r language_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+language_crime_plot
+```
+
+```{r fig.width=8, fig.height=5, echo=FALSE, warning=FALSE, message = FALSE}
+cross_compare_barplot(data=gss_data,
+                      col1 = "eor_01c", col2 = "msvic",
+                      col1_num=eor_01c_num, col1_labels=eor_01c_label,
+                      col2_num=msvic_num, col2_labels=msvic_labels, 
+                      plot_title="University Education VS Crime",
+                      plot_subtitle="",
+                      plot_xlab="Crime",
+                      plot_ylab="Percentage", 
+                      plot_fill_lab="University Education")
+```
+
+
+```{r fig.width=8, fig.height=5, echo=FALSE, warning=FALSE, message = FALSE}
+cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eor_01b < 3),
+                      col1 = "eor_01b", col2 = "msvic",
+                      col1_num=eor_01b_num, col1_labels=eor_01b_label,
+                      col2_num=msvic_num, col2_labels=msvic_labels, 
+                      plot_title="College Education VS Crime",
+                      plot_subtitle="",
+                      plot_xlab="Crime", 
+                      plot_ylab="Percentage", 
+                      plot_fill_lab="college Education")
+```
+
+```{r fig.width=8, fig.height=5, echo=FALSE, warning=FALSE, message = FALSE}
+cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eor_01a < 3),
+                      col1 = "eor_01a", col2 = "msvic",
+                      col1_num=eor_01a_num, col1_labels=eor_01a_label,
+                      col2_num=msvic_num, col2_labels=msvic_labels, 
+                      plot_title="Elementary School Education VS Crime",
+                      plot_subtitle="",
+                      plot_xlab="Crime", 
+                      plot_ylab="Percentage",
+                      plot_fill_lab="Elementary School Education")
+```
+
+```{r fig.width=8, fig.height=5, echo=FALSE, warning=FALSE, message = FALSE}
+cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eduf10 < 6),
+                            col1 = "edum5", col2 = "msvic",
+                      col1_num=eduf10_num, col1_labels=eduf10_labels,
+                      col2_num=msvic_num, col2_labels=msvic_labels, 
+                      plot_title="Father Education VS Crime", 
+                      plot_subtitle="Sex Discrimination has an obvious correlation with Sexual Assault", 
+                      plot_xlab="Crime", 
+                      plot_ylab="Percentage of Father Education", 
+                      plot_fill_lab="Education")
+```
+
+
+
+
+\newpage
 
 # Reference
+
 
 

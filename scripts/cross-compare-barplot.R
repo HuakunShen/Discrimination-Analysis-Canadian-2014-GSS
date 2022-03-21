@@ -1,17 +1,7 @@
 library(tidyverse)
 library(dplyr)
 library(ggplot2)
-library(gridExtra)
-library(kableExtra)
-library(here)
-library(hash)
 
-source(here::here("scripts/constants.R"))
-
-gss_data <- read_csv(here::here("inputs/data/data.csv"))
-
-
-col2_label = msvic_label
 
 cross_compare_barplot <- function(data, col1, col2, 
                                   col1_num, col1_labels,
@@ -44,28 +34,28 @@ cross_compare_barplot <- function(data, col1, col2,
     labs(title = plot_title, subtitle = plot_subtitle, fill=plot_fill_lab)
   return(barplot)
 }
-
-sex_crime_plot <- cross_compare_barplot(data=gss_data, 
-                                        col1 = "eduf10", col2 = "msvic",
-                                        col1_num=eduf10_num, col1_labels=eduf10_labels,
-                                        col2_num=msvic_num, col2_labels=msvic_labels, 
-                                        plot_title="Sex Discrimination VS Crime", 
-                                        plot_subtitle="Sex Discrimination has an obvious correlation with Sexual Assault", 
-                                        plot_xlab="Crime", 
-                                        plot_ylab="Percentage of Sex Discrimination", 
-                                        plot_fill_lab="Sex Discrimination")
-sex_crime_plot
+# 
+# data = gss_data %>% filter(msvic < 900) %>% filter(eor_01a < 3)
+# col2 <- "msvic"
+# col1 <- "eor_01c"
+# 
+# 
+# 
 
 
-cross_compare_barplot(data=gss_data,
-                      col1 = "dis_10", col2 = "msvic",
-                      col1_num=dis_10_num, col1_labels=dis_10_labels,
-                      col2_num=msvic_num, col2_labels=msvic_labels, 
-                      plot_title="Sex Discrimination VS Crime", 
-                      plot_subtitle="Sex Discrimination has an obvious correlation with Sexual Assault", 
-                      plot_xlab="Crime", 
-                      plot_ylab="Percentage of Sex Discrimination", 
-                      plot_fill_lab="Sex Discrimination")
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
