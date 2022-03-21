@@ -133,11 +133,10 @@ Another trade-off is that the general social survey is a relatively long to capt
 
 
 \newpage
-#Results
+# Results
+
 ## Classification of Discrimination
 The identification of discrimination could be vague and inconsistent in different regions. According to Human rights in Ontario[@humanrights], there are four forms of discrimination: direct, indirect, subtle, and adverse effect discrimination; Harassment; Poisoned environment; Systemic discrimination. Discrimination often derives from different backgrounds and identities. Based on unique combination of identities, people may be exposed to specific forms of discrimination and may experience significant personal harm. The 2014 GSS on Canadians’ Safety and Security (Victimization) mainly captured gender, disability, and ethnicity. It also provides information of the condition when discrimination happens. According to Figure \@ref(fig:discrimination-reason), the most common reason of discrimination within 5 years is sex and ethnicity. In addition, physical appearance, age and language are also typical reasons of discrimination.
-
-
 
 
 ```{r, discrimination-reason, fig.cap="discrimination Reason", echo=FALSE, warning=FALSE}
