@@ -299,7 +299,6 @@ Theft, assault, and break and enter happen most frequently.
 ### Crime Count By Education Level
 
 ```{r crime-count-plot-by-education, fig.cap="Crime By Education Level", echo=FALSE, warning=FALSE, message = FALSE, fig.height=6, fig.width=8}
-# university_crime_count
 grid.arrange(university_crime_count,
             college_crime_count,
             elementary_crime_count,
@@ -319,6 +318,32 @@ I couldn't find a good explanation high "Sexual Assault" for university-educatio
 
 ## Discrimination VS Crime
 
+```{r discrim-vs-crime-plot, fig.cap="Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE, fig.height=6, fig.width=8}
+discrim_vs_plot
+```
+
+Figure \@ref(fig:discrim-vs-crime-plot) plots the relationship between discrimination and crime to show which crimes are more related to discrimination.
+Crimes like robbery and sexual assault are more likely to happen on people being discriminated.
+
+
+Figure \@ref(fig:sex-crime-plot) to Figure \@ref(fig:language-crime-plot) in appendix plot the relationship between crime and different discrimination categories.
+
+The following table shows some obvious and proportional positive relationship between crime rate and different types of discrimination (i.e. people experience discrimination $x$ is more likely to experience crime $y$).
+
+| Discrimination                | Crime                                             |
+| ----------------------------- | ------------------------------------------------- |
+| Sex                           | Sexual Assault                                    |
+| Ethnicity or Culture          | Robbery                                           |
+| Race and Skin Color           | Robbery, Mortar theft, (Sexual) Assault           |
+| Physical Appearance           | Robbery and Sexual Assault                        |
+| Religion                      | Robbery and Sexual Assault                        |
+| Sexual Orientation            | Attempted Robbery and Sexual Assault              |
+| Age                           | Robbery and Attempted theft of household property |
+| Physical or Mental Disability | Robbery and Sexual Assault                        |
+| Language                      | None                                              |
+
+
+
 
 
 
@@ -332,47 +357,58 @@ I couldn't find a good explanation high "Sexual Assault" for university-educatio
 
 Based on results of the survey, every gender group have a similar perception in police and criminal courts. However, it is still too early to conclude that there are no gender discrimination during law enforcement because of the limitations in the survey. In the original survey, when people are asked for their gender, only Male and Female are available to choose from, the other options are either "Valid Skip" or "Refusal", as a result, every survey respondent chose either "Male" or "Female". This makes the results very biased. Suppose that all the *Poor Job* votes are from a minority gender group, the results become deceptive because they were not able to select their own gender. 
 
+## Discrimination VS Crime
+
+One special finding is that robbery appears to be very related to discrimination.
+
+Sexual Assault seems to be quite common in both overall crime count (Figure \@ref(fig:crime-plot)) and amoung discriminated people (Figure \@ref(fig:discrim-vs-crime-plot)),
+so it's not surprise that in all types of discrimination, sex assault is almost always one of the top crime (Figure \@ref(fig:sex-crime-plot) to \@ref(fig:language-crime-plot)).
+
+However, robbery rate has the opposite phenomenon. 
+In Figure \@ref(fig:crime-plot), we can see that among all other crimes, (attempted) robbery are one of the least frequent crime.
+But in Figure \@ref(fig:discrim-vs-crime-plot), robbery and attempted robbery are each as frequent as sexual assault. 
+For all types of discriminations, robbery is also one of the top crime(Figure \@ref(fig:sex-crime-plot) to \@ref(fig:language-crime-plot)).
+
+We can draw an hypothesis that people experienced discrimination are more likely to experience robbery.
+
+\newpage
 
 
 # Appendix
 
-
-
-# Appendix
-
-```{r sex_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r sex-crime-plot, fig.cap="Sex Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE, fig.height=6, fig.width=8}
 sex_crime_plot
 ```
 
-```{r culture_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r culture-crime-plot, fig.cap="Ethnicity or culture Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 culture_crime_plot
 ```
 
-```{r race_skin_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r race-skin-crime-plot, fig.cap="Race and Skin Color Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 race_skin_crime_plot
 ```
 
-```{r physical_appearance_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r physical-appearance-crime-plot, fig.cap="Physical appearance Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 physical_appearance_crime_plot
 ```
 
-```{r religion_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r religion-crime-plot, fig.cap="Religion Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 religion_crime_plot
 ```
 
-```{r sexual_orientation_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r sexual-orientation-crime-plot, fig.cap="Sexual orientation Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 sexual_orientation_crime_plot
 ```
 
-```{r age_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r age-crime-plot, fig.cap="Age Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 age_crime_plot
 ```
 
-```{r physical_mental_disability_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r physical-mental-disability-crime-plot, fig.cap="Physical or mental disability Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 physical_mental_disability_crime_plot
 ```
 
-```{r language_crime_plot, echo=FALSE, warning=FALSE, message = FALSE}
+```{r language-crime-plot, fig.cap="Language Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 language_crime_plot
 ```
 

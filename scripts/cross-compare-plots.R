@@ -4,6 +4,18 @@ library(ggplot2)
 
 
 gss_data <- read_csv(here::here("inputs/data/data.csv"))
+
+discrim_vs_plot <- cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(discrim < 3),
+                                        col1 = "discrim", col2 = "msvic",
+                                        col1_num=dis_10_num, col1_labels=dis_10_labels,
+                                        col2_num=msvic_num, col2_labels=msvic_labels,
+                                        plot_title="Discrimination VS Crime",
+                                        plot_subtitle="",
+                                        plot_xlab="Crime",
+                                        plot_ylab="Percentage",
+                                        plot_fill_lab="Discrimination")
+
+
 sex_crime_plot <- cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(dis_10 < 3),
                                         col1 = "dis_10", col2 = "msvic",
                                         col1_num=dis_10_num, col1_labels=dis_10_labels,
