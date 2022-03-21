@@ -279,23 +279,40 @@ barplot(pip_count_based_on_gender_140, main="Confidence in Criminal Courts",
   legend = rownames(pip_count_based_on_gender_140), horiz=TRUE, beside=TRUE)
 ```
 
+## Crime By Category
 
-```{r crime-plot, echo=FALSE, warning=FALSE, message = FALSE, fig.height=6, fig.width=8}
+```{r crime-plot, fig.cap="Crime Count By Category", echo=FALSE, warning=FALSE, message = FALSE, fig.height=6, fig.width=8}
 subset_data = gss_data %>% filter(msvic < 900)  # ignore invalid responses
 subset_data %>% 
   left_join(as.data.frame(list(msvic=msvic_num, msvic_label=msvic_labels))) %>%
   ggplot(aes(as.factor(msvic_label), fill=msvic_label)) + geom_histogram(stat="count") + 
-  theme(axis.text.x = element_text(angle = 60, hjust = 1)) + xlab("Crime") +
+  theme(axis.text.x = element_text(angle = 60, hjust = 1)) +
   labs(title = "Crime Count", fill="Crime Category")
 ```
 
-```{r crime-count-plot-by-education, echo=FALSE, warning=FALSE, message = FALSE, fig.height=6, fig.width=8}
+Figure \@ref(fig:crime-plot) shows the crime count of different categories. 
+We can identify the crimes that happen the most frequently.
+
+Theft, assault, and break and enter happen most frequently.
+
+
+### Crime Count By Education Level
+
+```{r crime-count-plot-by-education, fig.cap="Crime By Education Level", echo=FALSE, warning=FALSE, message = FALSE, fig.height=6, fig.width=8}
 # university_crime_count
 grid.arrange(university_crime_count,
             college_crime_count,
             elementary_crime_count,
             nrow=1)
 ```
+
+Figure \@ref(fig:crime-count-plot-by-education) show the same crime count but differentiated by education level.
+
+The education levels are mutually exclusive (i.e. if a respondent select "Yes" for "Elementary/junior/high school" education level, then he/she can not select "Yes" for the other 2 questions). The 3 plots all have similar shapes to Figure \@ref(fig:crime-plot), i.e. the most frequent crime categories in Figure \@ref(fig:crime-plot) are also the most frequent crimes in Figure \@ref(fig:crime-count-plot-by-education).
+
+Within Figure \@ref(fig:crime-count-plot-by-education), the subplot "University Education Crime Count" has a obviously different shape from the other 2 education level.
+
+It seems like samples with University Education have higher chance of getting "Sexual Assault" and "Theft of personal property".
 
 
 \newpage
