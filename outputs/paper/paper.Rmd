@@ -427,8 +427,29 @@ cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eduf10 < 
                       plot_fill_lab="Education")
 ```
 
+```{r, out.width='800px', echo=F}
+knitr::include_graphics(here::here("outputs/paper/s.jpg"))
+```
 
+```{r, out.width='800px', echo=F}
+knitr::include_graphics(here::here("outputs/paper/s1.jpg"))
+```
 
+```{r, out.width='800px', echo=F}
+knitr::include_graphics(here::here("outputs/paper/s2.jpg"))
+```
+
+```{r, out.width='800px', echo=F}
+knitr::include_graphics(here::here("outputs/paper/s3.jpg"))
+```
+
+```{r, out.width='800px', echo=F}
+knitr::include_graphics(here::here("outputs/paper/s4.jpg"))
+```
+
+```{r, out.width='800px', echo=F}
+knitr::include_graphics(here::here("outputs/paper/s5.jpg"))
+```
 
 \newpage
 
