@@ -179,14 +179,16 @@ Now we will investigate people's confidence in police in different gender groups
 ```{r, include= FALSE}
 myvars <- c("sex", "cip_10")
 cip_based_on_gender <- input_csv[myvars]
+# Only interested in valid responses
 cip_based_on_gender<-cip_based_on_gender[!cip_based_on_gender$cip_10>=6,]
+# Rename column
 cip_based_on_gender$sex[cip_based_on_gender$sex==2] <- "Female"
 cip_based_on_gender$sex[cip_based_on_gender$sex==1] <- "Male"
 cip_based_on_gender$cip_10[cip_based_on_gender$cip_10==1] <- "Great confidence"
 cip_based_on_gender$cip_10[cip_based_on_gender$cip_10==2] <- "Some confidence"
 cip_based_on_gender$cip_10[cip_based_on_gender$cip_10==3] <- "Small confidence"
 cip_based_on_gender$cip_10[cip_based_on_gender$cip_10==4] <- "No confidence"
-
+# Generate table for plotting
 cip_count_based_on_gender <- table(cip_based_on_gender$sex, cip_based_on_gender$cip_10)
 
 ```
@@ -204,7 +206,9 @@ Next, we will take a closer look at the responses of two other questions, they a
 ```{r, include = FALSE}
 myvars <- c("sex", "plp_130", "plp_140")
 pip_based_on_gender <- input_csv[myvars]
+# Filter out valid response
 pip_based_on_gender<-pip_based_on_gender[!(pip_based_on_gender$plp_130>=6 | pip_based_on_gender$plp_140>=6),]
+# Rename column
 pip_based_on_gender$sex[pip_based_on_gender$sex==2] <- "Female"
 pip_based_on_gender$sex[pip_based_on_gender$sex==1] <- "Male"
 pip_based_on_gender$plp_130[pip_based_on_gender$plp_130==1] <- "Good Job"
@@ -244,6 +248,7 @@ After investigating different gender group's confidence in police, we will now t
 ```{r, include = FALSE}
 myvars <- c("sex", "pcc_145")
 conf_in_court_based_on_gender <- input_csv[myvars]
+# Filter out valid response
 conf_in_court_based_on_gender<-conf_in_court_based_on_gender[!(conf_in_court_based_on_gender$pcc_145>=6),]
 conf_in_court_based_on_gender$sex[conf_in_court_based_on_gender$sex==2] <- "Female"
 conf_in_court_based_on_gender$sex[conf_in_court_based_on_gender$sex==1] <- "Male"
@@ -251,7 +256,7 @@ conf_in_court_based_on_gender$pcc_145[conf_in_court_based_on_gender$pcc_145==1] 
 conf_in_court_based_on_gender$pcc_145[conf_in_court_based_on_gender$pcc_145==2] <- "Some Confidence"
 conf_in_court_based_on_gender$pcc_145[conf_in_court_based_on_gender$pcc_145==3] <- "Not Very Much Confidence"
 conf_in_court_based_on_gender$pcc_145[conf_in_court_based_on_gender$pcc_145==4] <- "No Confidence"
-
+# Generate table
 conf_in_court_based_on_gender <- table(conf_in_court_based_on_gender$sex, conf_in_court_based_on_gender$pcc_145)
 
 ```
