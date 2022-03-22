@@ -23,6 +23,14 @@ DIS vs CIR: How discrimination affects crime
 Is there a correlation between education and discrimination or 
 
 
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
+
 
 
 
