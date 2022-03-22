@@ -34,13 +34,8 @@ cross_compare_barplot <- function(data, col1, col2,
     labs(title = plot_title, subtitle = plot_subtitle, fill=plot_fill_lab)
   return(barplot)
 }
-# 
-# data = gss_data %>% filter(msvic < 900) %>% filter(eor_01a < 3)
-# col2 <- "msvic"
-# col1 <- "eor_01c"
-# 
-# 
-# 
+
+
 
 
 
