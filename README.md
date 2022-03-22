@@ -31,6 +31,9 @@ Is there a correlation between education and discrimination or
       C-->D;
 ```
 
+$\frac{1}{2}$
+
+$$\frac{1}{2}$$
 
 
 
