@@ -59,7 +59,7 @@ You can and should cross-reference sections and sub-sections. For instance, Sect
 
 
 # Data
-We started our analysis by using R [@citeR], dplyr[@dplyr], tidyverse[@tidyverse], here[@here]. Graphs are generated using and ggplot2[@ggplot2] and kableExtra[@kableExtra].
+We started our analysis by using R [@citeR], dplyr[@dplyr], tidyverse[@tidyverse], here[@here]. Graphs are generated using and ggplot2[@ggplot2], kableExtra[@kableExtra], and gridExtra[@gridExtra].
 
 ## Data Source
 We retrieved our data from CHASS [@chass]. Among all the available data in the Canadian General Social Survey(Victimization), we decide to choose the following subset: *DIS: Discrimination*, *DTS: Discrimination - Types of Situations experienced by respondent*, *CIP: Confidence In Police*, *DEM: Demographic Derived Variables*, *PCC: Perceptions: Criminal Courts*, *PLP: Perceptions: Local Police*, *TIP: Trust In People*, *CIR: Main Routing Module: Crime Incident Report*. The GSS program, established in 1985, conducts surveys annually across the 10 provinces. The GSS is recognized for its regular collection of cross-sectional data that allows for trend analysis, and its capacity to test and develop new concepts that address current and emerging issues. The two primary objectives of the General Social Survey are: 
@@ -146,10 +146,10 @@ Another trade-off is that the general social survey is a relatively long to capt
 
 ## Classification of Discrimination
 
-The identification of discrimination could be vague and inconsistent in different regions. According to Human rights in Ontario[@humanrights], there are four forms of discrimination: direct, indirect, subtle, and adverse effect discrimination; Harassment; Poisoned environment; Systemic discrimination. Discrimination often derives from different backgrounds and identities. Based on unique combination of identities, people may be exposed to specific forms of discrimination and may experience significant personal harm. The 2014 GSS on Canadians’ Safety and Security (Victimization) mainly captured gender, disability, and ethnicity. It also provides information of the condition when discrimination happens. According to Figure \@ref(fig:discrimination-reason), the most common reason of discrimination within 5 years is sex and ethnicity. In addition, physical appearance, age and language are also typical reasons of discrimination.
+The identification of discrimination could be vague and inconsistent in different regions. According to Human rights in Ontario[@humanrights], there are four forms of discrimination: direct, indirect, subtle, and adverse effect discrimination; Harassment; Poisoned environment; Systemic discrimination. Discrimination often derives from different backgrounds and identities. Based on unique combination of identities, people may be exposed to specific forms of discrimination and may experience significant personal harm. The 2014 GSS on Canadians’ Safety and Security (Victimization) mainly captured gender, disability, and ethnicity. It also provides information of the condition when discrimination happens. According to Figure \@ref(fig:discrimination-reason), the most common reason of discrimination within 5 years is sex and ethnicity. The ground of “sex” is not specifically defined, although it is generally considered to be related to a person’s biological sex, male or female. Men and women receive equal protection under this ground. The ground of “sex” also includes a broader notion of “gender,” which can be described as the social characteristics attributed to each sex[@humanrights]. In addition, physical appearance, age and language are also typical reasons of discrimination.
 
 
-```{r, discrimination-reason, fig.cap="discrimination Reason", echo=FALSE, warning=FALSE}
+```{r, discrimination-reason, fig.cap="Discrimination Reason", echo=FALSE, warning=FALSE}
 ggplot(data = data_cleaned) + 
   geom_histogram(aes(x = Have_Discrimination_Experience_in_5_years, fill = Discrimination_Reason), 
                  position = 'dodge', 
@@ -158,9 +158,9 @@ ggplot(data = data_cleaned) +
   scale_x_log10()
 ```
 
-Under many circumstances, the government has established regulations to protect human rights. For example, the Canadian Human Rights Act is a broad-reaching piece of legislation that prohibits discrimination on the basis of gender, race, ethnicity and other grounds. Also, Canada's Employment Equity Act and the Federal Contractors Program require employers to take active measures to improve the employment opportunities for specific groups of people in our country. Both the labour rights and responsibilities of employers and employees within federally regulated sectors fall under the Canada Labour Code. The rights of foreign workers in Canada are also protected under federal or provincial/territorial labour laws. However, we could still see that discrimination experience is significantly common under working environment in \@ref(fig:discrimination-experience). Bank, store, and restaurant are the most common location for discrimination to take place while the Canadian border and courts are the least common location for discrimination to happen.
+Under many circumstances, the government has established regulations to protect human rights. For example, the Canadian Human Rights Act is a broad-reaching piece of legislation that prohibits discrimination on the basis of gender, race, ethnicity and other grounds. Also, Canada's Employment Equity Act and the Federal Contractors Program require employers to take active measures to improve the employment opportunities for specific groups of people in our country. Both the labour rights and responsibilities of employers and employees within federally regulated sectors fall under the Canada Labour Code. The rights of foreign workers in Canada are also protected under federal or provincial/territorial labour laws[@canada]. However, we could still see that discrimination experience is significantly common under working environment in \@ref(fig:discrimination-experience). Bank, store, and restaurant are the most common location for discrimination to take place while the Canadian border and courts are the least common location for discrimination to happen.
 
-```{r, discrimination-experience, fig.cap="discrimination Experience", echo=FALSE, warning=FALSE}
+```{r, discrimination-experience, fig.cap="Discrimination Experience", echo=FALSE, warning=FALSE}
 ggplot(data = data_cleaned) + 
   geom_histogram(aes(x = Have_Discrimination_Experience_in_5_years, fill = Discrimination_Experience), 
                  position = 'dodge', 
@@ -356,6 +356,17 @@ The following table shows some obvious and proportional positive relationship be
 
 
 # Discussion
+
+## Discrimination under Working Environment
+
+Many people wrongly think that discrimination does not exist if the impact was not intended, or if there were other factors that could explain a particular situation. In fact, discrimination often takes place without any intent to do harm. And in most cases, there are overlaps between discrimination and other legitimate factors[@humanrights]. From our results, discrimination under working environment is very common. Discrimination in the workplace happens when a person or a group of people is treated unfairly or unequally because of specific characteristics. As we mentioned for discrimination reasons, these characteristics are protected. However, it still happens, even though discrimination in the workplace has been illegal for decades. 
+
+Employers have the primary obligation to make sure their workplace is free from discrimination and harassment. Employers are expected to proactively provide a workplace where human rights are respected and employees afforded equal opportunities. Even without the legal requirement not to discriminate, providing a fair work environment that respects the dignity of all employees is in an organization’s best interests. Today's global economy, multicultural society and highly competitive corporate environment place greater demands on all organizations. Employers need to recruit and retain the best employees for their organizations, and part of that process involves selecting and keeping employees with diverse backgrounds and talents from the widest possible pool of candidates.
+Unions are important partners in creating a non-discriminatory workplace. Unions and employers have a joint duty to make sure that workplaces are free of discrimination and harassment. Given that around 75% of all human rights complaints arise in the workplace, it makes good business sense to take proactive action[@humanrights]. 
+
+The only way to stop workplace discrimination is to speak up about these incidents, bring lawsuits, and shine a light on discriminatory practices. Most companies care about the bottom line—and they will only stop discriminating when big verdicts and settlements make discrimination too costly to permit[@king]. Another crucial reason behind the high occurrence of discrimination under working environment is that victims are usually afraid of revealing the truth since it may cost them to lose the job or being treated even more unfairly afterwards. However, to truly protect themselves away from discrimination, they should know their protected human rights and seek for help.
+
+
 
 ## Gender Discrimination in Law Enforcement
 
