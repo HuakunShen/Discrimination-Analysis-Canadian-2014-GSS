@@ -275,7 +275,7 @@ subset_data %>%
   left_join(as.data.frame(list(msvic=msvic_num, msvic_label=msvic_labels))) %>%
   ggplot(aes(as.factor(msvic_label), fill=msvic_label)) + geom_histogram(stat="count") + 
   theme(axis.text.x = element_text(angle = 60, hjust = 1)) +
-  labs(title = "Crime Count", fill="Crime Category")
+  labs(title = "Crime Count", fill="Crime Category") + xlab("Crime")
 ```
 
 Figure \@ref(fig:crime-plot) shows the crime count of different categories. 
