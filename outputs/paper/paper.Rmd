@@ -385,44 +385,44 @@ A large-enough sample size is the prerequisite of data analysis. It will help if
 
 # Appendix
 
-```{r sex-crime-plot, fig.cap="Sex Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE, fig.height=6, fig.width=8}
+```{r sex-crime-plot, fig.height=4, fig.cap="Sex Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 sex_crime_plot
 ```
 
-```{r culture-crime-plot, fig.cap="Ethnicity or culture Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r culture-crime-plot, fig.height=4, fig.cap="Ethnicity or culture Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 culture_crime_plot
 ```
 
-```{r race-skin-crime-plot, fig.cap="Race and Skin Color Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r race-skin-crime-plot, fig.height=4, fig.cap="Race and Skin Color Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 race_skin_crime_plot
 ```
 
-```{r physical-appearance-crime-plot, fig.cap="Physical appearance Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r physical-appearance-crime-plot, fig.height=4, fig.cap="Physical appearance Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 physical_appearance_crime_plot
 ```
 
-```{r religion-crime-plot, fig.cap="Religion Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r religion-crime-plot, fig.height=4, fig.cap="Religion Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 religion_crime_plot
 ```
 
-```{r sexual-orientation-crime-plot, fig.cap="Sexual orientation Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r sexual-orientation-crime-plot, fig.height=4, fig.cap="Sexual orientation Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 sexual_orientation_crime_plot
 ```
 
-```{r age-crime-plot, fig.cap="Age Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r age-crime-plot, fig.height=4, fig.cap="Age Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 age_crime_plot
 ```
 
-```{r physical-mental-disability-crime-plot, fig.cap="Physical or mental disability Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r physical-mental-disability-crime-plot, fig.height=4, fig.cap="Physical or mental disability Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 physical_mental_disability_crime_plot
 ```
 
-```{r language-crime-plot, fig.cap="Language Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r language-crime-plot, fig.height=4, fig.cap="Language Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
 language_crime_plot
 ```
 
 
-```{r university-education-vs-crime, fig.width=8, fig.height=5, echo=FALSE, warning=FALSE, message = FALSE}
+```{r university-education-vs-crime, fig.cap="University Education VS Crime", fig.width=8, fig.height=5, echo=FALSE, warning=FALSE, message = FALSE}
 cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eor_01c < 3),
                             col1 = "eor_01c", col2 = "msvic",
                       col1_num=eor_01c_num, col1_labels=eor_01c_label,
@@ -433,6 +433,8 @@ cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eor_01c <
                       plot_ylab="Percentage", 
                       plot_fill_lab="Education")
 ```
+
+\newpage
 
 ```{r, out.width='800px', echo=F}
 knitr::include_graphics(here::here("outputs/paper/s.jpg"))
