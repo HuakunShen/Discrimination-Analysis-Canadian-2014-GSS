@@ -46,7 +46,7 @@ We started our analysis by using R [@citeR], dplyr[@dplyr], tidyverse[@tidyverse
 We retrieved our data from CHASS [@chass]. Among all the available data in the Canadian General Social Survey(Victimization), we decide to choose the following subset: *DIS: Discrimination*, *DTS: Discrimination - Types of Situations experienced by respondent*, *CIP: Confidence In Police*, *DEM: Demographic Derived Variables*, *PCC: Perceptions: Criminal Courts*, *PLP: Perceptions: Local Police*, *TIP: Trust In People*, *CIR: Main Routing Module: Crime Incident Report*. The GSS program, established in 1985, conducts surveys annually across the 10 provinces. The GSS is recognized for its regular collection of cross-sectional data that allows for trend analysis, and its capacity to test and develop new concepts that address current and emerging issues. The two primary objectives of the General Social Survey are: 
 a)  to gather data on social trends in order to monitor changes in the living conditions and well-being 
 of Canadians over time; and 
-b)  to provide immediate information on specific social policy issues of current or emerging interest. 
+b)  to provide immediate information on specific social policy issues of current or emerging interest.
 
 To meet these objectives, the data collected by the GSS are made up of two components: classification and core content. Classification content (such as age, sex, education, income) helps to delineate population groups for use in the analysis of core data. Core content is designed to measure changes in society related to living conditions and well-being and to supply data to inform specific policy issues[@chass]. 
 
