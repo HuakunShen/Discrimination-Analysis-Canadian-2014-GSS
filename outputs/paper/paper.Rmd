@@ -4,9 +4,9 @@ author:
   - Lantao Cui
   - Huakun Shen
   - Sijian Wu
-thanks: "Code and data are available at: https://github.com/HuakunShen/Discrimination-Analysis-Canadian-2014-GSS"
+thanks: "Code and data are available at: https://github.com/HuakunShen/Discrimination-Analysis-Canadian-2014-GSS; Supplementary Survey is available at:https://docs.google.com/forms/d/e/1FAIpQLScA1B4XmVNyGOJ5YUltHLZNbdaCeHxrC_-52gIDt61s5BvYCA/viewform?usp=sf_link"
 date: "`r format(Sys.time(), '%d %B %Y')`"
-abstract: "We studied discrimination in Canada and its related effects. Discrimination could potentially to inequality and even crimes. We found that sex discrimination is most common, the most common place for discrimination to happen is bank, store and retaurant; there is no apparent gender discrimination in law enforcement; and robbery is correlated with discrimination."
+abstract: "We studied discrimination in Canada and its related effects. Discrimination could potentially be unequal treatment and even crimes. We analyzed the available data from Canadian General Social Survey(Victimization) to learn the current condition of discrimination in Canada. We found that sex discrimination is most common, the most commonplace for discrimination to happen is bank, store, and restaurant; there is no apparent gender discrimination in law enforcement; and robbery is correlated with discrimination."
 output:
   bookdown::pdf_document2
 toc: FALSE
@@ -33,11 +33,15 @@ source(here::here("scripts/crime-count.R"))
 
 # Introduction
 
-Discrimination had always been a worldwide issue, in the past, people used to judge people based on their race, sex, and age. However, after going into the 20th century, people started to advocate for equality and diversity, along with the help of some civil rights leaders such as Martin Luther King, the world is slowly becoming more diversified and discrimination-free. But despite the efforts people make to promote equality, discrimination and inequality are still prominent in today’s world. For instance, according to Statistics Canada, in 2017, the number of hate crimes increased markedly by 47% and has remained at comparable levels in 2018 and 2019. Between 2018 and 2019, hate crimes motivated by hatred of a race or ethnicity increased by 10%, much of this increase was a result of more hate crimes targeting the Black and West Asian People. [@moreau_2021]
+Discrimination had always been a worldwide issue, in the past, people used to judge people based on their race, sex, and age. However, after going into the 20th century, people started to advocate for equality and diversity, along with the help of some civil rights leaders such as Martin Luther King, the world is slowly becoming more diversified and discrimination-free. But despite the efforts people make to promote equality, discrimination and inequality are still prominent in today’s world. For instance, according to Statistics Canada, in 2017, the number of hate crimes increased markedly by 47% and has remained at comparable levels in 2018 and 2019. Between 2018 and 2019, hate crimes motivated by hatred of a race or ethnicity increased by 10%, much of this increase was a result of more hate crimes targeting the Black and West Asian People[@moreau_2021]. 
 
 To find out more about discrimination, we obtained and analyzed data from Canadian General Social Survey, we are mostly interested in the type of discrimination that occurs most frequently and whether discrimination affects law enforcement. Additionally, we want to find out whether there is a correlation between discrimination and different type of crimes. 
 
+The remainder sections would show that it is worth paying attention to the discrimination problem in Canada. Section \@ref(data) would introduce our data. Section \@ref(results) would present our results about certain discrimination concerns evaluated based on our data. Section \@ref(discussion) would illustrate our explanation and discussions regarding our results. Section \@ref(appendix) includes a more detailed demonstration mentioned in the previous sections with a supplementary survey created for our analysis. Section \@ref(reference) includes our references for this paper.
 
+
+
+\newpage
 
 # Data
 We started our analysis by using R [@citeR], dplyr[@dplyr], tidyverse[@tidyverse], here[@here]. Graphs are generated using and ggplot2[@ggplot2], kableExtra[@kableExtra], and gridExtra[@gridExtra].
@@ -165,7 +169,7 @@ gender_group$sex[gender_group$sex==2] <- "Female"
 gender_group$sex[gender_group$sex==1] <- "Male"
 ```
 
-```{r, gender-distribution, fig.cap='Gender Distribution', echo=FALSE, warning=FALSE, message = FALSE, fig.width=10, fig.height=5, fig.pos = "!H"}
+```{r, gender-distribution, fig.cap='Gender Distribution', echo=FALSE, warning=FALSE, message = FALSE, fig.width=4, fig.height=2, fig.pos = "!H"}
 
 ggplot(data=gender_group, aes(x=sex, y=n)) +
   geom_bar(stat="identity")
@@ -381,7 +385,6 @@ A large-enough sample size is the prerequisite of data analysis. It will help if
 
 \newpage
 
-
 # Appendix
 
 ```{r sex-crime-plot, fig.height=4, fig.cap="Sex Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
@@ -420,7 +423,6 @@ physical_mental_disability_crime_plot
 language_crime_plot
 ```
 
-
 ```{r university-education-vs-crime, fig.cap="University Education VS Crime", fig.width=8, fig.height=5, echo=FALSE, warning=FALSE, message = FALSE}
 cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eor_01c < 3),
                             col1 = "eor_01c", col2 = "msvic",
@@ -433,7 +435,6 @@ cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eor_01c <
                       plot_fill_lab="Education")
 ```
 
-\newpage
 
 ```{r, out.width='800px', echo=F}
 knitr::include_graphics(here::here("outputs/paper/s.jpg"))
@@ -458,6 +459,7 @@ knitr::include_graphics(here::here("outputs/paper/s4.jpg"))
 ```{r, out.width='800px', echo=F}
 knitr::include_graphics(here::here("outputs/paper/s5.jpg"))
 ```
+
 
 \newpage
 
