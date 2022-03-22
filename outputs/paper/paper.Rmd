@@ -6,7 +6,7 @@ author:
   - Sijian Wu
 thanks: "Code and data are available at: https://github.com/HuakunShen/Discrimination-Analysis-Canadian-2014-GSS; Supplementary Survey is available at:https://docs.google.com/forms/d/e/1FAIpQLScA1B4XmVNyGOJ5YUltHLZNbdaCeHxrC_-52gIDt61s5BvYCA/viewform?usp=sf_link"
 date: "`r format(Sys.time(), '%d %B %Y')`"
-abstract: "We studied discrimination in Canada and its related effects. Discrimination could potentially be unequal treatment and even crimes. We analyzed the available data from Canadian General Social Survey(Victimization) to learn the current condition of discrimination in Canada. We found that sex discrimination is most common, the most commonplace for discrimination to happen is bank, store, and restaurant; there is no apparent gender discrimination in law enforcement; and robbery is correlated with discrimination."
+abstract: "Many people wrongly think that discrimination does not exist if the impact was not intended, or if there were other factors that could explain a particular situation. In fact, discrimination could potentially be unequal treatment and even crimes. We studied discrimination in Canada with its related effects and analyzed the available data from Canadian General Social Survey(Victimization) to learn the current condition of discrimination in Canada. We found that sex discrimination is most common, the most commonplace for discrimination to happen is bank, store, and restaurant; there is no apparent gender discrimination in law enforcement; and robbery is correlated with discrimination."
 output:
   bookdown::pdf_document2
 toc: FALSE
