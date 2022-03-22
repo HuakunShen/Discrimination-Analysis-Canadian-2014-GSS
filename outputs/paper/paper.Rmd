@@ -334,14 +334,6 @@ The following table shows some obvious and proportional positive relationship be
 | Language                      | None                                              |
 
 
-
-
-
-
-
-\newpage
-
-
 # Discussion
 
 ## Discrimination under Working Environment
@@ -375,7 +367,18 @@ We can draw an hypothesis that people experienced discrimination are more likely
 
 ## Limitations
 
+There are some limitations in the data source which could cause inaccuracy.
 
+In Figure \@ref(fig:crime-plot), we can see that the number of "theft of personal property" is over 1200. But in Figure \@ref(fig:crime-count-plot-by-education), the total number of "theft of personal property" is below 300, which is a fraction of the total number.
+What happens to the rest of the population? Are their education level all below Elementary school? This is not very likely in Canada (a developer country). After carefully inspecting the data, I found that 88.6% of the samples didn't select a "Yes" or "No" answer for either of the 3 listed education levels. Most of the answers were "Valid Skip", causing the sample size to be quite small for education-related data. 
+
+Samples used to generate Figure \@ref(fig:crime-count-plot-by-education) is not the same group of sample (or just a small subset of the original sample) used to generate \@ref(fig:crime-plot). Further due to the smaller sample size, the conclusion drawn from the data could be very inaccurate.
+
+For example, in Figure \@ref(fig:university-education-vs-crime), we can see that "Attempted theft of household property" is 100% for university-level-education population. We may come to a conclusion that people with higher education level are more likely to get stolen.
+
+But 100% is not a regular number, it's not normal to reach 100% in large-sample survey, after carefully inspecting the dataset, only there is only one sample fall in the group "Attempted theft of household property" + "University Level Education", and none fall in the group "Attempted theft of household property" and "No University Level Education". This could be normal because it's possible that not many people experienced "Attempted theft of household property". But after further inspection I found that there are 20 samples selecting "Attempted theft of household property" and 19 of them has "Valid Skip" for education level survey. In brief, only 5% of the "Attempted theft of household property" samples are valid, and the sample size is 1. Without careful inspection to every piece of data, these invalid responses could lead to misinterpretation.
+
+A large-enough sample size is the prerequisite of data analysis. It will help if the survey results can college more valid data.
 
 \newpage
 
@@ -419,15 +422,15 @@ language_crime_plot
 ```
 
 
-```{r fig.width=8, fig.height=5, echo=FALSE, warning=FALSE, message = FALSE}
-cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eduf10 < 6),
-                            col1 = "edum5", col2 = "msvic",
-                      col1_num=eduf10_num, col1_labels=eduf10_labels,
+```{r university-education-vs-crime, fig.width=8, fig.height=5, echo=FALSE, warning=FALSE, message = FALSE}
+cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eor_01c < 3),
+                            col1 = "eor_01c", col2 = "msvic",
+                      col1_num=eor_01c_num, col1_labels=eor_01c_label,
                       col2_num=msvic_num, col2_labels=msvic_labels, 
-                      plot_title="Father Education VS Crime", 
-                      plot_subtitle="Relatively low crime rate for all crimes", 
-                      plot_xlab="Crime", 
-                      plot_ylab="Percentage of Father Education", 
+                      plot_title="University Education VS Crime",
+                      plot_subtitle="",
+                      plot_xlab="Crime",
+                      plot_ylab="Percentage", 
                       plot_fill_lab="Education")
 ```
 
