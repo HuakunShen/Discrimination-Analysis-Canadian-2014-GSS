@@ -1,6 +1,5 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
+title: "Canadian Discrimination Analysis with GSS (2014)"
 author: 
   - Lantao Cui
   - Huakun Shen
