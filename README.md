@@ -34,5 +34,3 @@ Is there a correlation between education and discrimination or
 
 
 
-
-

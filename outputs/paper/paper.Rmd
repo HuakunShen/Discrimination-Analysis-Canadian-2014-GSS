@@ -7,7 +7,7 @@ author:
   - Sijian Wu
 thanks: "Code and data are available at: https://github.com/HuakunShen/Discrimination-Analysis-Canadian-2014-GSS"
 date: "`r format(Sys.time(), '%d %B %Y')`"
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "We studied discrimination in Canada and its related effect. Discrimination could potentially to inequality and even crimes. We found that sex discrimination is most common, the most common place for discrimination to happen is bank, store and retaurant; there is no apparent gender discrimination in law enforcement; and robbery is correlated with discrimination."
 output:
   bookdown::pdf_document2
 toc: FALSE
