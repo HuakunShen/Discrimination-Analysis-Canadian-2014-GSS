@@ -1,4 +1,6 @@
-university_crime_count <- gss_data %>% filter(msvic < 900) %>% filter(eor_01c == 1) %>% 
+# This file is a helper file containing plots generation of crime-count plots
+# This is just a helper file, it should be sourced within other files where gss_data and libraries are loaded
+university_crime_count <- gss_data %>% filter(msvic < 900) %>% filter(eor_01c == 1) %>%
   left_join(as.data.frame(list(msvic=msvic_num, msvic_label=msvic_labels))) %>%
   ggplot(aes(as.factor(msvic_label))) + geom_histogram(stat="count") + 
   theme(plot.title = element_text(size=10), axis.text.x = element_text(angle = 60, hjust = 1)) + xlab("Crime") +
