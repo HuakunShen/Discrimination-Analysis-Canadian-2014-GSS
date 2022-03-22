@@ -5,7 +5,7 @@ author:
   - Lantao Cui
   - Huakun Shen
   - Sijian Wu
-thanks: "Code and data are available at: LINK."
+thanks: "Code and data are available at: https://github.com/HuakunShen/Discrimination-Analysis-Canadian-2014-GSS"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
 output:
@@ -14,26 +14,6 @@ toc: FALSE
 bibliography: references.bib
 ---
 
-
-## Table of Contents
-### 1  Introduction\
-------------------------------------------------------------------------------------------------2
-
-### 2  Data
-##### 2.1 Data Source\
-------------------------------------------------------------------------------------------------3
-
-##### 2.2 Methodology and Data Collection\
-------------------------------------------------------------------------------------------------3
-
-##### 2.3 Data Characteristics\
-------------------------------------------------------------------------------------------------5
-
-### 3 Limitations and Conclusion\
-------------------------------------------------------------------------------------------------9
-
-### 4 Reference\
-------------------------------------------------------------------------------------------------10
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
 
@@ -54,7 +34,9 @@ source(here::here("scripts/crime-count.R"))
 
 # Introduction
 
-You can and should cross-reference sections and sub-sections. For instance, Section \@ref(data). R Markdown automatically makes the sections lower case and adds a dash to spaces to generate labels, for instance, Section \@ref(first-discussion-point). 
+Discrimination had always been a worldwide issue, in the past, people used to judge people based on their race, sex, and age. However, after going into the 20th century, people started to advocate for equality and diversity, along with the help of some civil rights leaders such as Martin Luther King, the world is slowly becoming more diversified and discrimination-free. But despite the efforts people make to promote equality, discrimination and inequality are still prominent in today’s world. For instance, according to Statistics Canada, in 2017, the number of hate crimes increased markedly by 47% and has remained at comparable levels in 2018 and 2019. Between 2018 and 2019, hate crimes motivated by hatred of a race or ethnicity increased by 10%, much of this increase was a result of more hate crimes targeting the Black and West Asian People. [@moreau_2021]
+
+To find out more about discrimination, we obtained and analyzed data from Canadian General Social Survey, we are mostly interested in the type of discrimination that occurs most frequently and whether discrimination affects law enforcement. Additionally, we want to find out whether there is a correlation between discrimination and different type of crimes. 
 
 
 
