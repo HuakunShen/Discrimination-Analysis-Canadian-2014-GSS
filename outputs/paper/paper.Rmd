@@ -37,7 +37,7 @@ Discrimination had always been a worldwide issue, in the past, people used to ju
 
 To find out more about discrimination, we obtained and analyzed data from Canadian General Social Survey, we are mostly interested in the type of discrimination that occurs most frequently and whether discrimination affects law enforcement. Additionally, we want to find out whether there is a correlation between discrimination and different type of crimes. 
 
-The remainder sections would show that it is worth paying attention to the discrimination problem in Canada. Section \@ref(data) would introduce our data. Section \@ref(results) would present our results about certain discrimination concerns evaluated based on our data. Section \@ref(discussion) would illustrate our explanation and discussions regarding our results. Section \@ref(appendix) includes a more detailed demonstration mentioned in the previous sections with a supplementary survey created for our analysis. Section \@ref(reference) includes our references for this paper.
+The remainder sections would show that it is worth paying attention to the discrimination problem in Canada. Section \@ref(data) would introduce our data. Section \@ref(results) would present our results about certain discrimination concerns evaluated based on our data. Section \@ref(discussion) would illustrate our explanation and discussions regarding our results. Section \@ref(appendix) includes a more detailed demonstration mentioned in the previous sections with a supplementary survey created for our analysis. The last section includes our references for this paper.
 
 
 
@@ -387,43 +387,43 @@ A large-enough sample size is the prerequisite of data analysis. It will help if
 
 # Appendix
 
-```{r sex-crime-plot, fig.height=4, fig.cap="Sex Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r sex-crime-plot, fig.height=4, fig.cap="Sex Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE, fig.pos = "!H"}
 sex_crime_plot
 ```
 
-```{r culture-crime-plot, fig.height=4, fig.cap="Ethnicity or culture Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r culture-crime-plot, fig.height=4, fig.cap="Ethnicity or culture Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE, fig.pos = "!H"}
 culture_crime_plot
 ```
 
-```{r race-skin-crime-plot, fig.height=4, fig.cap="Race and Skin Color Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r race-skin-crime-plot, fig.height=4, fig.cap="Race and Skin Color Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE, fig.pos = "!H"}
 race_skin_crime_plot
 ```
 
-```{r physical-appearance-crime-plot, fig.height=4, fig.cap="Physical appearance Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r physical-appearance-crime-plot, fig.height=4, fig.cap="Physical appearance Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE, fig.pos = "!H"}
 physical_appearance_crime_plot
 ```
 
-```{r religion-crime-plot, fig.height=4, fig.cap="Religion Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r religion-crime-plot, fig.height=4, fig.cap="Religion Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE, fig.pos = "!H"}
 religion_crime_plot
 ```
 
-```{r sexual-orientation-crime-plot, fig.height=4, fig.cap="Sexual orientation Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r sexual-orientation-crime-plot, fig.height=4, fig.cap="Sexual orientation Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE, fig.pos = "!H"}
 sexual_orientation_crime_plot
 ```
 
-```{r age-crime-plot, fig.height=4, fig.cap="Age Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r age-crime-plot, fig.height=4, fig.cap="Age Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE, fig.pos = "!H"}
 age_crime_plot
 ```
 
-```{r physical-mental-disability-crime-plot, fig.height=4, fig.cap="Physical or mental disability Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r physical-mental-disability-crime-plot, fig.height=4, fig.cap="Physical or mental disability Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE, fig.pos = "!H"}
 physical_mental_disability_crime_plot
 ```
 
-```{r language-crime-plot, fig.height=4, fig.cap="Language Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE}
+```{r language-crime-plot, fig.height=4, fig.cap="Language Discrimination VS Crime", echo=FALSE, warning=FALSE, message = FALSE, fig.pos = "!H"}
 language_crime_plot
 ```
 
-```{r university-education-vs-crime, fig.cap="University Education VS Crime", fig.width=8, fig.height=5, echo=FALSE, warning=FALSE, message = FALSE}
+```{r university-education-vs-crime, fig.cap="University Education VS Crime", fig.width=8, fig.height=5, echo=FALSE, warning=FALSE, message = FALSE, fig.pos = "!H"}
 cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eor_01c < 3),
                             col1 = "eor_01c", col2 = "msvic",
                       col1_num=eor_01c_num, col1_labels=eor_01c_label,
@@ -436,27 +436,27 @@ cross_compare_barplot(data=gss_data %>% filter(msvic < 900) %>% filter(eor_01c <
 ```
 
 
-```{r, out.width='800px', echo=F}
+```{r, out.width='800px', echo=F, fig.pos = "!H"}
 knitr::include_graphics(here::here("outputs/paper/s.jpg"))
 ```
 
-```{r, out.width='800px', echo=F}
+```{r, out.width='800px', echo=F, fig.pos = "!H"}
 knitr::include_graphics(here::here("outputs/paper/s1.jpg"))
 ```
 
-```{r, out.width='800px', echo=F}
+```{r, out.width='800px', echo=F, fig.pos = "!H"}
 knitr::include_graphics(here::here("outputs/paper/s2.jpg"))
 ```
 
-```{r, out.width='800px', echo=F}
+```{r, out.width='800px', echo=F, fig.pos = "!H"}
 knitr::include_graphics(here::here("outputs/paper/s3.jpg"))
 ```
 
-```{r, out.width='800px', echo=F}
+```{r, out.width='800px', echo=F, fig.pos = "!H"}
 knitr::include_graphics(here::here("outputs/paper/s4.jpg"))
 ```
 
-```{r, out.width='800px', echo=F}
+```{r, out.width='800px', echo=F, fig.pos = "!H"}
 knitr::include_graphics(here::here("outputs/paper/s5.jpg"))
 ```
 
