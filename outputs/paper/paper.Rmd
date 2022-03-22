@@ -7,7 +7,7 @@ author:
   - Sijian Wu
 thanks: "Code and data are available at: https://github.com/HuakunShen/Discrimination-Analysis-Canadian-2014-GSS"
 date: "`r format(Sys.time(), '%d %B %Y')`"
-abstract: "We studied discrimination in Canada and its related effect. Discrimination could potentially to inequality and even crimes. We found that sex discrimination is most common, the most common place for discrimination to happen is bank, store and retaurant; there is no apparent gender discrimination in law enforcement; and robbery is correlated with discrimination."
+abstract: "We studied discrimination in Canada and its related effects. Discrimination could potentially to inequality and even crimes. We found that sex discrimination is most common, the most common place for discrimination to happen is bank, store and retaurant; there is no apparent gender discrimination in law enforcement; and robbery is correlated with discrimination."
 output:
   bookdown::pdf_document2
 toc: FALSE
@@ -367,6 +367,10 @@ But in Figure \@ref(fig:discrim-vs-crime-plot), robbery and attempted robbery ar
 For all types of discriminations, robbery is also one of the top crime(Figure \@ref(fig:sex-crime-plot) to \@ref(fig:language-crime-plot)).
 
 We can draw an hypothesis that people experienced discrimination are more likely to experience robbery.
+
+## Limitations
+
+
 
 \newpage
 

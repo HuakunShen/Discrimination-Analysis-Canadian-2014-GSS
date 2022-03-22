@@ -1,3 +1,5 @@
+# This file contains the code for plots (comparing discrimination with crime) generation
+
 library(tidyverse)
 library(dplyr)
 library(ggplot2)
